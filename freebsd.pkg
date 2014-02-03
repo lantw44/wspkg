@@ -1,0 +1,104 @@
+// vim: ft=c: et
+
+#ifdef WSPKG_FREEBSD_PORTS
+# include "freebsd.ports"
+#endif
+
+// ===========================================================================
+// Packages mapping started from here
+// ===========================================================================
+
+// Standard
+#define BC              NULL
+#define BIND            bind-tools
+#define FILE            NULL
+#define FINGER          NULL
+#define FTP             NULL
+#define INETD           NULL
+#define ISPELL          aspell-ispell
+#define LESS            NULL
+#define LOCATE          NULL
+#define NCURSES_TERM    NULL
+#define PATCH           NULL
+#define PCI             NULL
+#define PERL            perl5
+#define PYTHON2         python2
+#define PYTHON3         python3
+#define SHARUTILS       NULL
+#define SSH             NULL
+#define STRACE          NULL
+#define TELNET          NULL
+#define TIME            NULL
+#define USB             NULL
+#define WAMERICAN       NULL
+#define WHOIS           NULL
+
+// Shell
+// Browser
+// Mail
+// Admin
+#define ACPI            NULL
+#define CPUFREQ         NULL
+#define IOTOP           NULL
+#define MENU            NULL
+#define MCELOG          mcelog
+#define PARTED          NULL
+#define SYSSTAT         NULL
+#define FDISK           linuxfdisk
+#define GDISK           gdisk
+
+// Devel
+#define ANT             apache-ant
+#define CLANG           NULL
+#define GCC             gcc gcc48
+#define GDB             gdb
+#define GOLANG          NULL
+#define GIT             git-subversion gitg // FIXME: change options to get GUI
+#define INDENT          NULL
+#define MAKE            gmake bmake
+#define MINGW           NULL
+#define OPENJDK6        openjdk6
+#define OPENJDK7        openjdk
+#define SUBVERSION      subversion
+#define TCL             tcl84
+#define TK              tk84
+
+// Doc
+#define LIBC_DOC        NULL
+#define MAKE_DOC        NULL
+#define MANPAGES        NULL
+#define MANPAGES_POSIX  NULL
+#define PERL_DOC        NULL
+#define PYTHON2_DOC     NULL
+#define PYTHON3_DOC     NULL
+#define TCL_DOC         NULL
+#define TK_DOC          NULL
+#define GCC_DOC         NULL
+
+// Editors
+#define CTAGS           ctags
+#define EMACS           emacs24
+#define LIBREOFFICE     libreoffice zh_TW-libreoffice
+#define VIM_GTK         vim
+
+// Electronics
+// Fonts
+#define ARPHIC          zh-arphicttf
+#define BAEKMUK         ko-baekmukfonts-ttf
+#define CJKUNIFONTS     zh-CJKUnifonts
+#define LIBERATION      liberation-fonts-ttf
+#define IPAFONT         ja-font-ipa ja-font-mplus-ipa ja-font-ipaex
+#define WQY             wqy-fonts
+#define XFONTS_CYRILLIC xorg-fonts-cyrillic
+#define XFONTS_INTL_CHINESE \
+                        NULL
+#define XFONTS_WQY      NULL
+
+// GNOME
+#define GDM             gdm
+#define GNOME_USER_DOCS gnome-user-docs
+#define GTK2_ENGINES    gtk-engines2
+#define GVFS            gvfs
+#define REMMINA         remmina remmina-plugins
+#define GTK2            gtk2 gtk2-reference gtkmm24 gtkmm24-reference
+#define GTK3            gtk3 gtk3-reference gtkmm30 gtkmm30-reference
