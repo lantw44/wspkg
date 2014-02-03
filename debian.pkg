@@ -114,3 +114,25 @@
 #define HUGS                hugs
 #define HASKELL_PLATFORM    haskell-platform
 #define HASKELL_OPENGL      libghc-opengl-dev
+
+// Interpreters
+// Library
+#define LIBC_DEV            libc6-dev libc6-pic libc6-prof libc6-dbg
+#define LIBEVENT_DEV        libevent-dev
+#define FFTW_DEV            libfftw3-dev
+#define GSL_DEV             libgsl0-dev
+#define JPEG_DEV            libjpeg8-dev
+#define LTDL_DEV            libltdl-dev
+#define NCURSES_DEV         libncurses5-dev libncursesw5-dev
+#define QT4_DEV             libqt4-dev
+#define QT5_DEV             NULL // TODO: Add Qt 5
+#define PERL_DEV            libperl-dev
+#define MYSQLXX_DEV         libmysql++-dev
+#define OPENMPI_DEV         libopenmpi1.6-dev
+#define GFLAGS_DEV          libgflags-dev
+#define BOOST_DEV           libboost-dev
+#define IMLIB2_DEV          libimlib2-dev
+#define EXOSIP2_DEV         libexosip2-dev
+#define OPENCV_DEV          libcv-dev libcvaux-dev libhighgui-dev
+#define FFMPEG_DEV          libavcodec-dev libavformat-dev libpostproc-dev \
+                            libavutil-dev libswscale-dev libavfilter-dev

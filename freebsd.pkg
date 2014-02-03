@@ -110,3 +110,24 @@
 #define HUGS                hugs98
 #define HASKELL_PLATFORM    hs-haskell-platform
 #define HASKELL_OPENGL      hs-OpenGL
+
+// Interpreters
+// Library
+#define LIBC_DEV            NULL
+#define LIBEVENT_DEV        libevent2
+#define FFTW_DEV            fftw3 fftw3-float fftw3-long fftw3-quad
+#define GSL_DEV             gsl
+#define JPEG_DEV            jpeg
+#define LTDL_DEV            libltdl
+#define NCURSES_DEV         ncurses
+#define QT4_DEV             qt4
+#define QT5_DEV             NULL // TODO: Add Qt 5
+#define PERL_DEV            NULL // provided by default perl installation
+#define MYSQLXX_DEV         mysql++-mysql55
+#define OPENMPI_DEV         openmpi
+#define GFLAGS_DEV          gflags
+#define BOOST_DEV           boost-all
+#define IMLIB2_DEV          imlib2
+#define EXOSIP2_DEV         libeXosip2
+#define OPENCV_DEV          opencv
+#define FFMPEG_DEV          ffmpeg ffmpeg0

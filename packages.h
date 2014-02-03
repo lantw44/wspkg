@@ -30,6 +30,8 @@
 # define WSPKG_GNOME
 # define WSPKG_GRAPHICS
 # define WSPKG_HASKELL
+# define WSPKG_INTERPRETERS
+# define WSPKG_LIBRARY
 #endif
 
 // ===========================================================================
@@ -76,11 +78,6 @@ FDISK           GDISK           // added by b01902062@csie.ntu.edu.tw
 // Database
 #ifdef WSPKG_DATABASE
 MYSQL_CLIENT
-#endif
-
-// Debug
-#ifdef WSPKG_DEBUG
-LIBC_DEBUG
 #endif
 
 // Devel
@@ -140,4 +137,19 @@ gimp            geeqie          IMAGEMAGICK     JPEG            graphviz
 // Haskell
 #ifdef WSPKG_HASKELL
 ghc             HUGS            HASKELL_PLATFORM                HASKELL_OPENGL
+#endif
+
+// Interpreters
+#ifdef WSPKG_INTERPRETERS
+gawk            swig
+#endif
+
+// Library
+#ifdef WSPKG_LIBRARY
+LIBC_DEV        LIBEVENT_DEV    FFTW_DEV        GSL_DEV         JPEG_DEV
+LTDL_DEV        NCURSES_DEV     QT4_DEV         QT5_DEV         PERL_DEV
+MYSQLXX_DEV     OPENMPI_DEV     GFLAGS_DEV      BOOST_DEV       IMLIB2_DEV
+EXOSIP2_DEV     // voip
+OPENCV_DEV      // opencv suite
+FFMPEG_DEV      // ffmpeg suite
 #endif
