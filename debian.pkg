@@ -7,102 +7,110 @@
 // Keyring
 
 // Standard
-#define BC              bc
-#define BIND            bind9-host dnsutils
-#define FILE            file
-#define FINGER          finger
-#define FTP             ftp
-#define INETD           openbsd-inetd
-#define ISPELL          ispell
-#define LESS            less
-#define LOCATE          mlocate
-#define NCURSES_TERM    ncurses-term
-#define PATCH           patch
-#define PCI             pciutils
-#define PERL            perl
-#define PYTHON2         python
-#define PYTHON3         python3
-#define SHARUTILS       sharutils
-#define SSH             openssh-client
-#define STRACE          strace
-#define TELNET          telnet
-#define TIME            time
-#define USB             usbutils
-#define WAMERICAN       wamerican
-#define WHOIS           whois
+#define BC                  bc
+#define BIND                bind9-host dnsutils
+#define FILE                file
+#define FINGER              finger
+#define FTP                 ftp
+#define INETD               openbsd-inetd
+#define ISPELL              ispell
+#define LESS                less
+#define LOCATE              mlocate
+#define NCURSES_TERM        ncurses-term
+#define PATCH               patch
+#define PCI                 pciutils
+#define PERL                perl
+#define PYTHON2             python
+#define PYTHON3             python3
+#define SHARUTILS           sharutils
+#define SSH                 openssh-client
+#define STRACE              strace
+#define TELNET              telnet
+#define TIME                time
+#define USB                 usbutils
+#define WAMERICAN           wamerican
+#define WHOIS               whois
 
 // Shell
 // Browser
 // Mail
 // Admin
-#define ACPI            acpid
-#define CPUFREQ         cpufrequtils
-#define IOTOP           iotop
-#define MENU            menu menu-xdg
-#define MCELOG          mcelog
-#define PARTED          parted
-#define SYSSTAT         sysstat
-#define FDISK           util-linux
-#define GDISK           gdisk
+#define ACPI                acpid
+#define CPUFREQ             cpufrequtils
+#define IOTOP               iotop
+#define MENU                menu menu-xdg
+#define MCELOG              mcelog
+#define PARTED              parted
+#define SYSSTAT             sysstat
+#define FDISK               util-linux
+#define GDISK               gdisk
 
 // Devel
-#define ANT             ant
-#define CLANG           clang libclang-dev
-#define GCC             g++ gfortran
-#define GDB             gdb
-#define GOLANG          golang
-#define GIT             git git-cvs git-svn git-gui gitk gitg // more plugins
-#define INDENT          indent
-#define MAKE            make pmake bmake
-#define MINGW           mingw-w64  // mingw32 is obsolete
-#define OPENJDK6        openjdk-6-jdk
-#define OPENJDK7        openjdk-7-jdk
-#define SUBVERSION      subversion
-#define TCL             tcl-dev
-#define TK              tk-dev
+#define ANT                 ant
+#define CLANG               clang libclang-dev
+#define GCC                 g++ gfortran
+#define GDB                 gdb
+#define GOLANG              golang
+#define GIT                 git git-cvs git-svn git-gui gitk gitg // more plugins
+#define INDENT              indent
+#define MAKE                make pmake bmake
+#define MINGW               mingw-w64  // mingw32 is obsolete
+#define OPENJDK6            openjdk-6-jdk
+#define OPENJDK7            openjdk-7-jdk
+#define SUBVERSION          subversion
+#define TCL                 tcl-dev
+#define TK                  tk-dev
 
 // Doc
-#define LIBC_DOC        glibc-doc glibc-doc-reference // reference manual
-#define MAKE_DOC        make-doc
-#define MANPAGES        manpages-dev
-#define MANPAGES_POSIX  manpages-posix-dev
-#define PERL_DOC        perl-doc
-#define PYTHON2_DOC     python-doc
-#define PYTHON3_DOC     python3-doc
-#define TCL_DOC         tcl8.4-dev
-#define TK_DOC          tk8.4-dev
-#define GCC_DOC         gcc-doc libstdc++-4.8-doc
+#define LIBC_DOC            glibc-doc glibc-doc-reference // reference manual
+#define MAKE_DOC            make-doc
+#define MANPAGES            manpages-dev
+#define MANPAGES_POSIX      manpages-posix-dev
+#define PERL_DOC            perl-doc
+#define PYTHON2_DOC         python-doc
+#define PYTHON3_DOC         python3-doc
+#define TCL_DOC             tcl8.4-dev
+#define TK_DOC              tk8.4-dev
+#define GCC_DOC             gcc-doc libstdc++-4.8-doc
 
 // Editors
-#define CTAGS           exuberant-ctags
-#define EMACS           emacs
-#define LIBREOFFICE     libreoffice \
-                        libreoffice-l10n-zh-tw libreoffice-help-zh-tw
-#define VIM_GTK         vim-gtk
+#define CTAGS               exuberant-ctags
+#define EMACS               emacs
+#define LIBREOFFICE         libreoffice \
+                            libreoffice-l10n-zh-tw libreoffice-help-zh-tw
+#define VIM_GTK             vim-gtk
 
 // Electronics
 // Fonts
-#define ARPHIC          fonts-arphic-bkai00mp fonts-arphic-bsmi00lp \
-                        fonts-arphic-gbsn00lp fonts-arphic-gkai00mp
-#define BAEKMUK         fonts-baekmuk
-#define CJKUNIFONTS     fonts-arphic-ukai fonts-arphic-uming
-#define LIBERATION      fonts-liberation
-#define IPAFONT         fonts-ipafont-gothic fonts-ipafont-mincho
-#define WQY             ttf-wqy-microhei fonts-wqy-zenhei
-#define XFONTS_CYRILLIC xfonts-cyrillic
-#define XFONTS_INTL_CHINESE \
-                        xfonts-intl-chinese
-#define XFONTS_WQY      xfonts-wqy
+#define ARPHIC              fonts-arphic-bkai00mp fonts-arphic-bsmi00lp \
+                            fonts-arphic-gbsn00lp fonts-arphic-gkai00mp
+#define BAEKMUK             fonts-baekmuk
+#define CJKUNIFONTS         fonts-arphic-ukai fonts-arphic-uming
+#define LIBERATION          fonts-liberation
+#define IPAFONT             fonts-ipafont-gothic fonts-ipafont-mincho
+#define WQY                 ttf-wqy-microhei fonts-wqy-zenhei
+#define XFONTS_CYRILLIC     xfonts-cyrillic
+#define XFONTS_INTL_CHINESE xfonts-intl-chinese
+#define XFONTS_WQY          xfonts-wqy
 
 // GNOME
-#define GDM             gdm3
-#define GNOME_USER_DOCS gnome-user-guide
-#define GTK2_ENGINES    gtk2-engines
-#define GVFS            gvfs-bin gvfs-backends
-#define REMMINA         remmina remmina-plugin-gnome remmina-plugin-nx \
-                        remmina-plugin-rdp remmina-plugin-telepathy \
-                        remmina-plugin-vnc remmina-plugin-xdmcp
-#define GTK2            libgtk2.0-dev libgtk2.0-doc libgtk2.0-0-dbg \
-                        libgtkmm-2.4-dev libgtkmm-2.4-doc libgtkmm-2.4-dbg
-#define GTK3            libgtk-3-dev libgtk-3-doc libgtk-3-0-dbg \
-                        libgtkmm-3.0-dev libgtkmm-3.0-doc libgtkmm-3.0-dbg
+#define GDM                 gdm3
+#define GNOME_USER_DOCS     gnome-user-guide
+#define GTK2_ENGINES        gtk2-engines
+#define GVFS                gvfs-bin gvfs-backends
+#define REMMINA             remmina remmina-plugin-gnome remmina-plugin-nx \
+                            remmina-plugin-rdp remmina-plugin-telepathy \
+                            remmina-plugin-vnc remmina-plugin-xdmcp
+#define GTK2                libgtk2.0-dev libgtk2.0-doc libgtk2.0-0-dbg \
+                            libgtkmm-2.4-dev libgtkmm-2.4-doc libgtkmm-2.4-dbg
+#define GTK3                libgtk-3-dev libgtk-3-doc libgtk-3-0-dbg \
+                            libgtkmm-3.0-dev libgtkmm-3.0-doc libgtkmm-3.0-dbg
+
+// Graphics
+#define IMAGEMAGICK         imagemagick
+#define JPEG                libjpeg-progs
+
+// Haskell
+#define HUGS                hugs
+#define HASKELL_PLATFORM    haskell-platform
+#define HASKELL_OPENGL      libghc-opengl-dev

@@ -28,6 +28,8 @@
 # define WSPKG_ELECTRONICS
 # define WSPKG_FONTS
 # define WSPKG_GNOME
+# define WSPKG_GRAPHICS
+# define WSPKG_HASKELL
 #endif
 
 // ===========================================================================
@@ -128,4 +130,14 @@ baobab          devhelp         epiphany        eog             gedit
 ghex            glade           GTK2            GTK3            gnome-terminal
 gnome-screenshot                gnome-system-monitor            nautilus
 vinagre
+#endif
+
+// Graphics
+#ifdef WSPKG_GRAPHICS
+gimp            geeqie          IMAGEMAGICK     JPEG            graphviz
+#endif
+
+// Haskell
+#ifdef WSPKG_HASKELL
+ghc             HUGS            HASKELL_PLATFORM                HASKELL_OPENGL
 #endif
