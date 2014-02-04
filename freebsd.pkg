@@ -34,8 +34,9 @@
 #define WHOIS               NULL
 
 // Shell
-// Browser
-// Mail
+#define KSH                 ksh93
+#define TCSH                NULL
+
 // Admin
 #define ACPI                NULL
 #define CPUFREQ             NULL
@@ -47,9 +48,12 @@
 #define FDISK               linuxfdisk
 #define GDISK               gdisk
 
+// Database
+#define MYSQL_CLIENT        mariadb55-client
+
 // Devel
 #define ANT                 apache-ant
-#define CLANG               NULL
+#define CLANG               clang34 // get libclang.so
 #define GCC                 gcc gcc48
 #define GDB                 gdb
 #define GOLANG              NULL
@@ -112,7 +116,7 @@
 #define HASKELL_OPENGL      hs-OpenGL
 
 // Interpreters
-// Library
+// Lib
 #define LIBC_DEV            NULL
 #define LIBEVENT_DEV        libevent2
 #define FFTW_DEV            fftw3 fftw3-float fftw3-long fftw3-quad
@@ -131,3 +135,118 @@
 #define EXOSIP2_DEV         libeXosip2
 #define OPENCV_DEV          opencv
 #define FFMPEG_DEV          ffmpeg ffmpeg0
+
+// Lisp
+// Lua
+#define LUA51               lua
+#define LUA52               lua52
+
+// Machine Learning
+// Mail
+#define MAILX               bsd-mailx
+#define VM                  vm-emacs24
+
+// Math
+#define GSL                 gsl
+#define OCTAVE_DEV          octave
+#define R_BASE              R
+
+// Misc
+#define KERNEL_PACKAGE      NULL // Debian-specific package
+#define XSLTPROC            libxslt
+#define PROTOBUF            protobuf
+
+// Net
+#define MTR                 mtr-nox11
+#define STUNNEL             stunnel
+#define VNCVIEWER           tightvnc tigervnc
+#define NS2                 ns
+#define NS3                 NULL // FIXME: currently not available?
+#define SPICE_CLIENT        NULL // FIXME: not found in ports
+#define XSPICE              NULL // FIXME: not found in ports
+
+// Parallel Programming
+// Perl
+#define PERL_BDB                        p5-BDB
+#define PERL_DATA_SERIALIZER            p5-Data-Serializer
+#define PERL_DBD_MYSQL                  p5-DBD-mysql55
+#define PERL_DBD_SQLITE3                p5-DBD-SQLite
+#define PERL_IO_ALL                     p5-IO-All
+#define PERL_JSON                       p5-JSON
+#define PERL_LIBWWW                     p5-libwww
+
+// Python
+#define PYTHON2                 python2
+#define PYTHON3                 python3
+#define IPYTHON                 py27-ipython
+#define PYPY                    pypy
+#define PYTHON_BSDDB3           py27-bsddb3
+#define PYTHON_IMAGING          py27-imaging
+#define PYTHON_NUMPY            py27-numpy
+#define PYTHON_SETUPTOOLS       py27-setuptools
+#define PYTHON_LIBSVM           libsvm-python
+#define PYTHON_MARKDOWN         py27-markdown
+#define PYTHON_MEMPROF          NULL
+#define PYTHON_PSUTIL           py27-psutil
+#define PYTHONTRACER            NULL
+#define PYTHON_MYSQLDB          NULL
+#define PYTHON_CJSON            py27-cjson
+#define PYTHON_SQLITE           py27-sqlite3
+#define PYTHON_BEAUTIFULSOUP    py27-beautifulsoup py27-beautifulsoup32
+#define PYTHON_TK               NULL
+#define PYTHON_SIMPLEJSON       py27-simplejson
+#define PYTHON_MATPLOTLIB       py27-matplotlib
+#define PYTHON_LXML             py27-lxml
+#define PYTHON_OPENCV           py27-opencv
+#define PYTHON_COGENT           pycogent
+#define PYTHON_REDIS            py27-redis
+#define PYTHON_YAML             py27-yaml
+#define PYTHON_GDATA            py27-gdata
+#define PYTHON_CURL             py27-curl
+#define PYTHON_LDAP             py27-ldap2py27-smbpasswd
+#define PYTHON_SMBPASSWD        py27-smbpasswd
+#define PYTHON_SPHINX           py27-sphinx
+#define PYTHON_SCIKITS_LEARN    py27-scikit-learn
+#define PYTHON_IGRAPH           py27-igraph
+#define PYTHON_PSYCOPG2         py27-psycopg2
+#define PYTHON_NETWORKX         py27-networkx
+#define PYTHON_VIRTUALENV       py27-virtualenv
+
+// Ruby
+#define RUBY                ruby19
+#define RUBY_MYSQL          ruby19-mysql
+
+// Science
+#define BLAST2              NULL // FIXME: not found in ports
+#define BLITZ               blitz++
+
+// Sound
+#define ALSA                alsa-lib alsa-plugins
+
+// TeX
+#define AUCTEX              auctex-emacs24
+#define LATEX_CJK           NULL // FIXME: conflict with texlive
+#define BIBER               NULL // FIXME: not found in ports
+#define TEXLIVE             NULL // texlive-full already provides all packages
+
+// Text
+#define ASPELL_EN           en-aspell // FIXME: not found in ports
+#define SPELL               spell
+
+// Utils
+#define BZIP2               NULL
+#define GPW                 NULL // FIXME: not found in ports
+#define LM_SENSORS          NULL // Linux-specific package
+#define PROCINFO            NULL // Linux-specific package
+#define SCIM_CHEWING        NULL // FIXME: not found in ports
+#define TOFRODOS            NULL
+#define BSDCPIO             NULL
+#define BSDTAR              NULL
+#define DEV86               dev86
+#define FAKECHROOT          NULL
+#define HTE                 hte
+#define MKISOFS             cdrtools
+#define PATCHELF            patchelf
+#define QEMU                qemu-devel
+#define UIM_FEP             uim
+#define UNIX2DOS            unix2dos

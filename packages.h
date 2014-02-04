@@ -17,11 +17,8 @@
 # define WSPKG_KEYRING
 # define WSPKG_STANDARD
 # define WSPKG_SHELL
-# define WSPKG_BROWSER
-# define WSPKG_MAIL
 # define WSPKG_ADMIN
 # define WSPKG_DATABASE
-# define WSPKG_DEBUG
 # define WSPKG_DEVEL
 # define WSPKG_DOC
 # define WSPKG_EDITORS
@@ -31,7 +28,25 @@
 # define WSPKG_GRAPHICS
 # define WSPKG_HASKELL
 # define WSPKG_INTERPRETERS
-# define WSPKG_LIBRARY
+# define WSPKG_LIB
+# define WSPKG_LISP
+# define WSPKG_LUA
+# define WSPKG_MACHINE_LEARNING
+# define WSPKG_MAIL
+# define WSPKG_MATH
+# define WSPKG_MISC
+# define WSPKG_NET
+# define WSPKG_PARALLEL
+# define WSPKG_PERL
+# define WSPKG_PYTHON
+# define WSPKG_RUBY
+# define WSPKG_SCIENCE
+# define WSPKG_SOUND
+# define WSPKG_TEX
+# define WSPKG_TEXT
+# define WSPKG_UTILS
+# define WSPKG_WEB
+# define WSPKG_X11
 #endif
 
 // ===========================================================================
@@ -54,18 +69,7 @@ WHOIS
 
 // Shell
 #ifdef WSPKG_SHELL
-bash            BASH_COMPLETION KSH             TCSH            zsh
-#endif
-
-// Browser
-#ifdef WSPKG_BROWSER
-W3M
-#endif
-
-// Mail
-#ifdef WSPKG_MAIL
-alpine          fetchmail       mpack           mutt            MAILX
-VM              // requested by cj
+bash            bash-completion KSH             TCSH            zsh
 #endif
 
 // Admin
@@ -77,7 +81,7 @@ FDISK           GDISK           // added by b01902062@csie.ntu.edu.tw
 
 // Database
 #ifdef WSPKG_DATABASE
-MYSQL_CLIENT
+MYSQL_CLIENT    sqlite3
 #endif
 
 // Devel
@@ -144,12 +148,134 @@ ghc             HUGS            HASKELL_PLATFORM                HASKELL_OPENGL
 gawk            swig
 #endif
 
-// Library
-#ifdef WSPKG_LIBRARY
+// Lib
+#ifdef WSPKG_LIB
 LIBC_DEV        LIBEVENT_DEV    FFTW_DEV        GSL_DEV         JPEG_DEV
 LTDL_DEV        NCURSES_DEV     QT4_DEV         QT5_DEV         PERL_DEV
 MYSQLXX_DEV     OPENMPI_DEV     GFLAGS_DEV      BOOST_DEV       IMLIB2_DEV
 EXOSIP2_DEV     // voip
 OPENCV_DEV      // opencv suite
 FFMPEG_DEV      // ffmpeg suite
+#endif
+
+// Lisp
+#ifdef WSPKG_LISP
+clisp
+#endif
+
+// Lua
+#ifdef WSPKG_LUA
+LUA51           LUA52
+#endif
+
+// Machine Learning
+#ifdef WSPKG_MACHINE_LEARNING
+weka
+#endif
+
+// Mail
+#ifdef WSPKG_MAIL
+alpine          fetchmail       mpack           mutt            MAILX
+VM              // requested by cj
+#endif
+
+// Math
+#ifdef WSPKG_MATH
+GSL             gnuplot         octave          OCTAVE_DEV      R_BASE
+#endif
+
+// Misc
+#ifdef WSPKG_MISC
+KERNEL_PACKAGE  poppler-data    screen          tmux            XSLTPROC
+PROTOBUF
+#endif
+
+// Net
+#ifdef WSPKG_NET
+denyhosts       filezilla       iftop           irssi           lftp
+MTR             ncftp           nmap            oidentd         rsync
+STUNNEL         tcpdump         VNCVIEWER       curl            aria2
+mosh            NS2             NS3
+// added by b01902062@csie.ntu.edu.tw
+x11vnc          SPICE_CLIENT    XSPICE          rdesktop        ldapvi
+#endif
+
+// Parallel Programming
+#ifdef WSPKG_PARALLEL
+mpich2
+#endif
+
+// Perl
+#ifdef WSPKG_PERL
+PERL_BDB        PERL_DATA_SERIALIZER            PERL_DBD_MYSQL  PERL_DBD_SQLITE3
+PERL_IO_ALL     PERL_JSON       PERL_LIBWWW
+#endif
+
+// Python
+#ifdef WSPKG_PYTHON
+IPYTHON         // PYTHON2 and PYTHON3 are included in standard section
+PYPY            // added by b01902062@csie.ntu.edu.tw
+PYTHON_BSDDB3   PYTHON_IMAGING  PYTHON_NUMPY    PYTHON_SETUPTOOLS
+PYTHON_LIBSVM
+// request by d97009@csie.ntu.edu.tw
+PYTHON_MARKDOWN PYTHON_MEMPROF  PYTHON_PSUTIL   PYTHONTRACER
+// by request
+PYTHON_MYSQLDB  PYTHON_CJSON    PYTHON_SQLITE   PYTHON_BEAUTIFULSOUP
+PYTHON_TK       PYTHON_SIMPLEJSON               PYTHON_MATPLOTLIB
+PYTHON_LXML     PYTHON_OPENCV   PYTHON_COGENT   PYTHON_REDIS    PYTHON_YAML
+PYTHON_GDATA    PYTHON_CURL     PYTHON_LDAP     PYTHON_SMBPASSWD
+PYTHON_SPHINX   PYTHON_SCIKITS_LEARN            PYTHON_IGRAPH
+PYTHON_PSYCOPG2 PYTHON_NETWORKX PYTHON_VIRTUALENV
+#endif
+
+// Ruby
+#ifdef WSPKG_RUBY
+RUBY            RUBY_MYSQL
+#endif
+
+// Science
+#ifdef WSPKG_SCIENCE
+BLAST2          BLITZ
+#endif
+
+// Sound
+#ifdef WSPKG_SOUND
+ALSA            alsa-utils
+#endif
+
+// TeX
+#ifdef WSPKG_TEX
+AUCTEX          bibtool         LATEX_CJK       latex2html      BIBER
+TEXLIVE
+texlive-full    // Added by Artoo on 2008.12.14, requested by cjlin@csie.ntu.edu.tw
+#endif
+
+// Text
+#ifdef WSPKG_TEXT
+a2ps            ASPELL_EN       dict            gs-cjk-resource gv
+mpage           poppler-utils   psutils         SPELL           xpdf
+html2p          zh-autoconvert
+pdftk           // Added by lydian on 2011/8/3, requested by cjlin
+#endif
+
+// Utils
+#ifdef WSPKG_UTILS
+BZIP2           fakeroot        GPW             LM_SENSORS      PROCINFO
+scim            SCIM_CHEWING    pv              rar             tree
+TOFRODOS        unrar           unzip           xdg-utils       zip
+// added by b01902062@csie.ntu.edu.tw
+BSDCPIO         BSDTAR          bochs           convmv          chrpath
+cgdb            DEV86           diffstat        FAKECHROOT      fdupes
+HTE             htop            meld            menumaker       MKISOFS
+ncdu            PATCHELF        QEMU            rpm2cpio        socat
+tig             UIM_FEP         UNIX2DOS        upx
+#endif
+
+// Web
+#ifdef WSPKG_WEB
+W3M
+#endif
+
+// X11
+#ifdef WSPKG_X11
 #endif

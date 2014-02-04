@@ -20,8 +20,8 @@
 #define PATCH               patch
 #define PCI                 pciutils
 #define PERL                perl
-#define PYTHON2             python
-#define PYTHON3             python3
+#define PYTHON2             python python-dev
+#define PYTHON3             python3 python3-dev
 #define SHARUTILS           sharutils
 #define SSH                 openssh-client
 #define STRACE              strace
@@ -32,8 +32,9 @@
 #define WHOIS               whois
 
 // Shell
-// Browser
-// Mail
+#define KSH                 ksh
+#define TCSH                tcsh
+
 // Admin
 #define ACPI                acpid
 #define CPUFREQ             cpufrequtils
@@ -44,6 +45,9 @@
 #define SYSSTAT             sysstat
 #define FDISK               util-linux
 #define GDISK               gdisk
+
+// Database
+#define MYSQL_CLIENT        mysql-client
 
 // Devel
 #define ANT                 ant
@@ -116,7 +120,7 @@
 #define HASKELL_OPENGL      libghc-opengl-dev
 
 // Interpreters
-// Library
+// Lib
 #define LIBC_DEV            libc6-dev libc6-pic libc6-prof libc6-dbg
 #define LIBEVENT_DEV        libevent-dev
 #define FFTW_DEV            libfftw3-dev
@@ -136,3 +140,119 @@
 #define OPENCV_DEV          libcv-dev libcvaux-dev libhighgui-dev
 #define FFMPEG_DEV          libavcodec-dev libavformat-dev libpostproc-dev \
                             libavutil-dev libswscale-dev libavfilter-dev
+
+// Lisp
+// Lua
+#define LUA51               lua5.1 liblua5.1-dev
+#define LUA52               lua5.2 liblua5.2-dev
+
+// Machine Learning
+// Mail
+#define MAILX               bsd-mailx
+#define VM                  vm
+
+// Math
+#define GSL                 gsl-bin
+#define OCTAVE_DEV          liboctave-dev
+#define R_BASE              r-base
+
+// Misc
+#define KERNEL_PACKAGE      kernel-package
+#define XSLTPROC            xsltproc
+#define PROTOBUF            protobuf-compiler libprotobuf-dev
+
+// Net
+#define MTR                 mtr-tiny
+#define STUNNEL             stunnel4
+#define VNCVIEWER           xvnc4viewer xtightvncviewer
+#define NS2                 ns2
+#define NS3                 ns3
+#define SPICE_CLIENT        spice-client spice-client-gtk \
+                            spice-client-glib-usb-acl-helper
+#define XSPICE              xserver-xspice
+
+// Parallel Programming
+// Perl
+#define PERL_BDB                        libberkeleydb-perl
+#define PERL_DATA_SERIALIZER            libdata-serializer-perl
+#define PERL_DBD_MYSQL                  libdbd-mysql-perl
+#define PERL_DBD_SQLITE3                libdbd-sqlite3-perl
+#define PERL_IO_ALL                     libio-all-perl
+#define PERL_JSON                       libjson-perl
+#define PERL_LIBWWW                     libwww-perl
+
+// Python
+#define IPYTHON                 ipython
+#define PYPY                    pypy
+#define PYTHON_BSDDB3           python-bsddb3 python3-bsddb3
+#define PYTHON_IMAGING          python-imaging
+#define PYTHON_NUMPY            python-numpy python3-numpy
+#define PYTHON_SETUPTOOLS       python-setuptools python3-setuptools
+#define PYTHON_LIBSVM           python-libsvm
+#define PYTHON_MARKDOWN         python-markdown python3-markdown
+#define PYTHON_MEMPROF          python-memprof python3-memprof
+#define PYTHON_PSUTIL           python-psutil python3-psutil
+#define PYTHONTRACER            pythontracer
+#define PYTHON_MYSQLDB          python-mysqldb
+#define PYTHON_CJSON            python-cjson
+#define PYTHON_SQLITE           python-pysqlite2
+#define PYTHON_BEAUTIFULSOUP    python-beautifulsoup
+#define PYTHON_TK               python-tk python3-tk
+#define PYTHON_SIMPLEJSON       python-simplejson python3-simplejson
+#define PYTHON_MATPLOTLIB       python-matplotlib python3-matplotlib
+#define PYTHON_LXML             python-lxml python3-lxml
+#define PYTHON_OPENCV           python-opencv
+#define PYTHON_COGENT           python-cogent
+#define PYTHON_REDIS            python-redis
+#define PYTHON_YAML             python-yaml python3-yaml
+#define PYTHON_GDATA            python-gdata
+#define PYTHON_CURL             python-pycurl
+#define PYTHON_LDAP             python-ldap
+#define PYTHON_SMBPASSWD        python-smbpasswd
+#define PYTHON_SPHINX           python-sphinx python3-sphinx
+#define PYTHON_SCIKITS_LEARN    python-scikits-learn
+#define PYTHON_IGRAPH           python-igraph
+#define PYTHON_PSYCOPG2         python-psycopg2 python3-psycopg2
+#define PYTHON_NETWORKX         python-networkx python3-networkx
+#define PYTHON_VIRTUALENV       python-virtualenv
+
+// Ruby
+#define RUBY                ruby ruby-dev
+#define RUBY_MYSQL          libmysql-ruby
+
+// Science
+#define BLAST2              blast2
+#define BLITZ               libblitz0-dev
+
+// Sound
+#define ALSA                alsa-base
+
+// TeX
+#define AUCTEX              auctex
+#define LATEX_CJK           latex-cjk-all
+#define BIBER               biber
+#define TEXLIVE             texlive texlive-latex-extra texlive-pstricks \
+                            texlive-science texlive-bibtex-extra \
+                            texlive-metapost // Added, by, Artoo, on, 2008.12.13,, requested, by, r95073@csie.ntu.edu.tw,
+
+// Text
+#define ASPELL_EN           aspell-en
+#define SPELL               spell
+
+// Utils
+#define BZIP2               bzip2
+#define GPW                 gfw
+#define LM_SENSORS          lm-sensors
+#define PROCINFO            procinfo
+#define SCIM_CHEWING        scim-chewing
+#define TOFRODOS            tofrodos
+#define BSDCPIO             bsdcpio
+#define BSDTAR              bsdtar
+#define DEV86               bin86 bcc
+#define FAKECHROOT          fakechroot
+#define HTE                 ht
+#define MKISOFS             genisoimage
+#define PATCHELF            NULL // FIXME: not available from repository
+#define QEMU                qemu qemu-user qemu-system qemu-utils
+#define UIM_FEP             uim-fep
+#define UNIX2DOS            dos2unix
