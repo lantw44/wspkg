@@ -45,6 +45,8 @@
 #define MCELOG              mcelog
 #define PARTED              NULL
 #define SYSSTAT             NULL
+#define PORTS_MGMT          portupgrade portmaster portconf
+#define NET_SNMP            net-snmp
 #define FDISK               linuxfdisk
 #define GDISK               gdisk
 
@@ -103,6 +105,7 @@
 #define GTK2_ENGINES        gtk-engines2
 #define GVFS                gvfs
 #define REMMINA             remmina remmina-plugins
+#define GNOME_META_PKG      gnome2-lite // XXX: GNOME 3 may be imported recently
 #define BAOBAB              gnome-utils
 #define GLADE               glade3
 #define GTK2                gtk2 gtk2-reference gtkmm24 gtkmm24-reference
@@ -119,6 +122,9 @@
 #define HASKELL_OPENGL      hs-OpenGL
 
 // Interpreters
+// KDE
+#define KDE_META_PKG        kde
+
 // Lib
 #define LIBC_DEV            NULL
 #define LIBEVENT_DEV        libevent2
@@ -245,6 +251,8 @@
 #define PROCINFO            NULL // Linux-specific package
 #define SCIM_CHEWING        NULL // FIXME: not found in ports
 #define TOFRODOS            NULL
+#define GCIN                zh-gcin
+#define SCIM_CHINESE        zh-scim-tables
 #define BSDCPIO             NULL
 #define BSDTAR              NULL
 #define CDIALOG             cdialog
@@ -266,6 +274,7 @@
 
 // X11
 #define DESKTOP_BASE        NULL
+#define FVWM                fvwm fvwm2-i18n
 #define IM_SWITCH           NULL
 #define MLTERM_TOOLS        NULL
 #define RXVT_ML             rxvt-unicode

@@ -43,6 +43,8 @@
 #define MCELOG              mcelog
 #define PARTED              parted
 #define SYSSTAT             sysstat
+#define PORTS_MGMT          NULL // FreeBSD-specific things
+#define NET_SNMP            snmpd
 #define FDISK               util-linux
 #define GDISK               gdisk
 
@@ -105,6 +107,7 @@
 #define REMMINA             remmina remmina-plugin-gnome remmina-plugin-nx \
                             remmina-plugin-rdp remmina-plugin-telepathy \
                             remmina-plugin-vnc remmina-plugin-xdmcp
+#define GNOME_META_PKG      NULL // FIXME: use tasksel?
 #define BAOBAB              baobab
 #define GLADE               glade
 #define GTK2                libgtk2.0-dev libgtk2.0-doc libgtk2.0-0-dbg \
@@ -123,6 +126,9 @@
 #define HASKELL_OPENGL      libghc-opengl-dev
 
 // Interpreters
+// KDE
+#define KDE_META_PKG        NULL // FIXME: use tasksel?
+
 // Lib
 #define LIBC_DEV            libc6-dev libc6-pic libc6-prof libc6-dbg
 #define LIBEVENT_DEV        libevent-dev
@@ -251,6 +257,8 @@
 #define PROCINFO            procinfo
 #define SCIM_CHEWING        scim-chewing
 #define TOFRODOS            tofrodos
+#define GCIN                gcin gcin-gtk3-immodule gcin-qt4-immodule
+#define SCIM_CHINESE        scim-tables-zh
 #define BSDCPIO             bsdcpio
 #define BSDTAR              bsdtar
 #define CDIALOG             dialog
@@ -272,6 +280,7 @@
 
 // X11
 #define DESKTOP_BASE        desktop-base
+#define FVWM                fvwm
 #define IM_SWITCH           im-switch
 #define MLTERM_TOOLS        mlterm-tools
 #define RXVT_ML             rxvt-ml

@@ -28,6 +28,8 @@
 # define WSPKG_GRAPHICS
 # define WSPKG_HASKELL
 # define WSPKG_INTERPRETERS
+# define WSPKG_KDE
+# define WSPKG_KDE
 # define WSPKG_LIB
 # define WSPKG_LISP
 # define WSPKG_LUA
@@ -63,8 +65,8 @@ BC              BIND            FILE            FINGER          FTP
 INETD           ISPELL          LESS            LOCATE          lsof
 m4              mime-support    NCURSES_TERM    PATCH           PCI
 PERL            PYTHON2         PYTHON3         SHARUTILS       SSH
-STRACE          TELNET          TIME            USB             WAMERICAN
-wget            WHOIS
+STRACE          sudo            TELNET          TIME            USB
+WAMERICAN       wget            WHOIS
 #endif
 
 // Shell
@@ -76,6 +78,7 @@ bash            bash-completion KSH             TCSH            zsh
 #ifdef WSPKG_ADMIN
 ACPI            CPUFREQ         IOTOP           MENU            MCELOG
 PARTED          SYSSTAT
+PORTS_MGMT      NET_SNMP        // freebsd local-217
 FDISK           GDISK           // added by b01902062@csie.ntu.edu.tw
 #endif
 
@@ -122,10 +125,13 @@ WQY             XFONTS_CYRILLIC XFONTS_INTL_CHINESE             XFONTS_WQY
 
 // GNOME
 #ifdef WSPKG_GNOME
+// debian 217-meta
 alacarte        evince          file-roller     gcalctool       GDM
 gnome-backgrounds               gnome-keyring   gnome-nettool   gnome-screensaver
 gnome-themes    GNOME_USER_DOCS GTK2_ENGINES    GVFS            REMMINA
 seahorse        xdg-user-dirs   zenity
+// freebsd local-217
+GNOME_META_PKG
 // added by b01902062@linux5.csie.ntu.edu.tw
 BAOBAB          devhelp         epiphany        eog             gedit
 ghex            GLADE           GTK2            GTK3            gnome-terminal
@@ -150,6 +156,8 @@ gawk            swig
 
 // KDE
 #ifdef WSPKG_KDE
+// freebsd local-217
+KDE_META_PKG
 kchmviewer      okular          // added by b01902062@csie.ntu.edu.tw
 #endif
 
@@ -178,9 +186,12 @@ LUA51           LUA52
 weka
 #endif
 
-// Mail
+// Mail and News
 #ifdef WSPKG_MAIL
+// debian 217-meta
 alpine          fetchmail       mpack           mutt            MAILX
+// freebsd local-217
+tin             metamail        newmail
 VM              // requested by cj
 #endif
 
@@ -201,8 +212,10 @@ denyhosts       filezilla       iftop           irssi           lftp
 MTR             ncftp           nmap            oidentd         rsync
 STUNNEL         tcpdump         VNCVIEWER       curl            aria2
 mosh            NS2             NS3
+// freebsd local-217
+pidgin          rdesktop        rrdtool         tcptraceroute   wmnd
 // added by b01902062@csie.ntu.edu.tw
-x11vnc          SPICE_CLIENT    XSPICE          rdesktop        ldapvi
+x11vnc          SPICE_CLIENT    XSPICE          ldapvi
 PCMANX
 #endif
 
@@ -266,9 +279,12 @@ pdftk           // Added by lydian on 2011/8/3, requested by cjlin
 
 // Utils
 #ifdef WSPKG_UTILS
+// debian 217-meta
 BZIP2           fakeroot        GPW             LM_SENSORS      PROCINFO
 scim            SCIM_CHEWING    pv              rar             tree
 TOFRODOS        unrar           unzip           xdg-utils       zip
+// freebsd local-217
+GCIN            SCIM_CHINESE
 // added by b01902062@csie.ntu.edu.tw
 BSDCPIO         BSDTAR          bochs           CDIALOG         cgdb
 chrpath         convmv          DEV86           diffstat        FAKECHROOT
@@ -286,9 +302,12 @@ JAVA_PLUGIN     // added by b01902062@csie.ntu.edu.tw
 
 // X11
 #ifdef WSPKG_X11
-afterstep       DESKTOP_BASE    fvwm            IM_SWITCH       mlterm
+// debian 217-meta
+afterstep       DESKTOP_BASE    FVWM            IM_SWITCH       mlterm
 MLTERM_TOOLS    rxvt            RXVT_ML         VNCSERVER       WINDOWMAKER
 xchm            xorg            xscreensaver    xterm           XVFB
+// freebsd local-217
+enlightenment   wdm             xlockmore
 // added by b01902062@csie.ntu.edu.tw
 fbpanel         obconf          openbox         XEPHYR          xrestop
 #endif
