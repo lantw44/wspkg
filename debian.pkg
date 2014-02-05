@@ -170,6 +170,7 @@
 #define SPICE_CLIENT        spice-client spice-client-gtk \
                             spice-client-glib-usb-acl-helper
 #define XSPICE              xserver-xspice
+#define PCMANX              pcmanx-gtk2
 
 // Parallel Programming
 // Perl
@@ -248,11 +249,29 @@
 #define TOFRODOS            tofrodos
 #define BSDCPIO             bsdcpio
 #define BSDTAR              bsdtar
+#define CDIALOG             dialog
 #define DEV86               bin86 bcc
 #define FAKECHROOT          fakechroot
 #define HTE                 ht
 #define MKISOFS             genisoimage
 #define PATCHELF            NULL // FIXME: not available from repository
 #define QEMU                qemu qemu-user qemu-system qemu-utils
+#define UNAR                unar
 #define UIM_FEP             uim-fep
 #define UNIX2DOS            dos2unix
+
+// Web
+#define FLASH_PLUGIN        flashplugin-nonfree
+#define FIREFOX             iceweasel iceweasel-l10n-zh-tw
+#define W3M_EL              w3m-el
+#define JAVA_PLUGIN         icedtea-plugin
+
+// X11
+#define DESKTOP_BASE        desktop-base
+#define IM_SWITCH           im-switch
+#define MLTERM_TOOLS        mlterm-tools
+#define RXVT_ML             rxvt-ml
+#define VNCSERVER           vnc4server tightvncserver
+#define WINDOWMAKER         wmaker
+#define XVFB                xvfb
+#define XEPHYR              xserver-xephyr

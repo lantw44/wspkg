@@ -64,7 +64,7 @@ INETD           ISPELL          LESS            LOCATE          lsof
 m4              mime-support    NCURSES_TERM    PATCH           PCI
 PERL            PYTHON2         PYTHON3         SHARUTILS       SSH
 STRACE          TELNET          TIME            USB             WAMERICAN
-WHOIS
+wget            WHOIS
 #endif
 
 // Shell
@@ -148,6 +148,11 @@ ghc             HUGS            HASKELL_PLATFORM                HASKELL_OPENGL
 gawk            swig
 #endif
 
+// KDE
+#ifdef WSPKG_KDE
+kchmviewer      okular          // added by b01902062@csie.ntu.edu.tw
+#endif
+
 // Lib
 #ifdef WSPKG_LIB
 LIBC_DEV        LIBEVENT_DEV    FFTW_DEV        GSL_DEV         JPEG_DEV
@@ -198,6 +203,7 @@ STUNNEL         tcpdump         VNCVIEWER       curl            aria2
 mosh            NS2             NS3
 // added by b01902062@csie.ntu.edu.tw
 x11vnc          SPICE_CLIENT    XSPICE          rdesktop        ldapvi
+PCMANX
 #endif
 
 // Parallel Programming
@@ -264,18 +270,25 @@ BZIP2           fakeroot        GPW             LM_SENSORS      PROCINFO
 scim            SCIM_CHEWING    pv              rar             tree
 TOFRODOS        unrar           unzip           xdg-utils       zip
 // added by b01902062@csie.ntu.edu.tw
-BSDCPIO         BSDTAR          bochs           convmv          chrpath
-cgdb            DEV86           diffstat        FAKECHROOT      fdupes
-HTE             htop            meld            menumaker       MKISOFS
-ncdu            PATCHELF        QEMU            rpm2cpio        socat
-tig             UIM_FEP         UNIX2DOS        upx
+BSDCPIO         BSDTAR          bochs           CDIALOG         cgdb
+chrpath         convmv          DEV86           diffstat        FAKECHROOT
+fdupes          HTE             htop            meld            menumaker
+MKISOFS         ncdu            PATCHELF        QEMU            rpm2cpio
+socat           tig             UIM_FEP         UNAR            UNIX2DOS
+upx
 #endif
 
 // Web
 #ifdef WSPKG_WEB
-W3M
+FLASH_PLUGIN    FIREFOX         lynx            w3m             W3M_EL
+JAVA_PLUGIN     // added by b01902062@csie.ntu.edu.tw
 #endif
 
 // X11
 #ifdef WSPKG_X11
+afterstep       DESKTOP_BASE    fvwm            IM_SWITCH       mlterm
+MLTERM_TOOLS    rxvt            RXVT_ML         VNCSERVER       WINDOWMAKER
+xchm            xorg            xscreensaver    xterm           XVFB
+// added by b01902062@csie.ntu.edu.tw
+fbpanel         obconf          openbox         XEPHYR          xrestop
 #endif

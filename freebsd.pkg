@@ -164,6 +164,7 @@
 #define NS3                 NULL // FIXME: currently not available?
 #define SPICE_CLIENT        NULL // FIXME: not found in ports
 #define XSPICE              NULL // FIXME: not found in ports
+#define PCMANX              zh-pcmanx
 
 // Parallel Programming
 // Perl
@@ -242,11 +243,29 @@
 #define TOFRODOS            NULL
 #define BSDCPIO             NULL
 #define BSDTAR              NULL
+#define CDIALOG             cdialog
 #define DEV86               dev86
 #define FAKECHROOT          NULL
 #define HTE                 hte
 #define MKISOFS             cdrtools
 #define PATCHELF            patchelf
 #define QEMU                qemu-devel
+#define UNAR                NULL // FIXME: not found in ports
 #define UIM_FEP             uim
 #define UNIX2DOS            unix2dos
+
+// Web
+#define FLASH_PLUGIN        nspluginwrapper linux_base-f10 linux-f10-flashplugin
+#define FIREFOX             firefox firefox-i18n
+#define W3M_EL              emacs-w3m-emacs24
+#define JAVA_PLUGIN         icedtea-web
+
+// X11
+#define DESKTOP_BASE        NULL
+#define IM_SWITCH           NULL
+#define MLTERM_TOOLS        NULL
+#define RXVT_ML             rxvt-unicode
+#define VNCSERVER           tightvnc tigervnc
+#define WINDOWMAKER         windowmaker
+#define XVFB                xorg-vfbserver
+#define XEPHYR              xephyr
