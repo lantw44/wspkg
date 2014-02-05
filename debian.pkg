@@ -105,10 +105,13 @@
 #define REMMINA             remmina remmina-plugin-gnome remmina-plugin-nx \
                             remmina-plugin-rdp remmina-plugin-telepathy \
                             remmina-plugin-vnc remmina-plugin-xdmcp
+#define BAOBAB              baobab
+#define GLADE               glade
 #define GTK2                libgtk2.0-dev libgtk2.0-doc libgtk2.0-0-dbg \
                             libgtkmm-2.4-dev libgtkmm-2.4-doc libgtkmm-2.4-dbg
 #define GTK3                libgtk-3-dev libgtk-3-doc libgtk-3-0-dbg \
                             libgtkmm-3.0-dev libgtkmm-3.0-doc libgtkmm-3.0-dbg
+#define GNOME_SCREENSHOT    gnome-screenshot
 
 // Graphics
 #define IMAGEMAGICK         imagemagick
@@ -238,6 +241,7 @@
 
 // Text
 #define ASPELL_EN           aspell-en
+#define GS_CJK_RESOURCE     gs-cjk-resource
 #define SPELL               spell
 
 // Utils

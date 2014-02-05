@@ -103,8 +103,11 @@
 #define GTK2_ENGINES        gtk-engines2
 #define GVFS                gvfs
 #define REMMINA             remmina remmina-plugins
+#define BAOBAB              gnome-utils
+#define GLADE               glade3
 #define GTK2                gtk2 gtk2-reference gtkmm24 gtkmm24-reference
 #define GTK3                gtk3 gtk3-reference gtkmm30 gtkmm30-reference
+#define GNOME_SCREENSHOT    gnome-utils
 
 // Graphics
 #define IMAGEMAGICK         ImageMagick
@@ -143,7 +146,7 @@
 
 // Machine Learning
 // Mail
-#define MAILX               bsd-mailx
+#define MAILX               NULL
 #define VM                  vm-emacs24
 
 // Math
@@ -204,7 +207,7 @@
 #define PYTHON_YAML             py27-yaml
 #define PYTHON_GDATA            py27-gdata
 #define PYTHON_CURL             py27-curl
-#define PYTHON_LDAP             py27-ldap2py27-smbpasswd
+#define PYTHON_LDAP             py27-ldap2
 #define PYTHON_SMBPASSWD        py27-smbpasswd
 #define PYTHON_SPHINX           py27-sphinx
 #define PYTHON_SCIKITS_LEARN    py27-scikit-learn
@@ -214,7 +217,7 @@
 #define PYTHON_VIRTUALENV       py27-virtualenv
 
 // Ruby
-#define RUBY                ruby19
+#define RUBY                ruby
 #define RUBY_MYSQL          ruby19-mysql
 
 // Science
@@ -232,7 +235,8 @@
 
 // Text
 #define ASPELL_EN           en-aspell // FIXME: not found in ports
-#define SPELL               spell
+#define GS_CJK_RESOURCE     poppler-data
+#define SPELL               NULL
 
 // Utils
 #define BZIP2               NULL

@@ -127,9 +127,9 @@ gnome-backgrounds               gnome-keyring   gnome-nettool   gnome-screensave
 gnome-themes    GNOME_USER_DOCS GTK2_ENGINES    GVFS            REMMINA
 seahorse        xdg-user-dirs   zenity
 // added by b01902062@linux5.csie.ntu.edu.tw
-baobab          devhelp         epiphany        eog             gedit
-ghex            glade           GTK2            GTK3            gnome-terminal
-gnome-screenshot                gnome-system-monitor            nautilus
+BAOBAB          devhelp         epiphany        eog             gedit
+ghex            GLADE           GTK2            GTK3            gnome-terminal
+GNOME_SCREENSHOT                gnome-system-monitor            nautilus
 vinagre
 #endif
 
@@ -258,9 +258,9 @@ texlive-full    // Added by Artoo on 2008.12.14, requested by cjlin@csie.ntu.edu
 
 // Text
 #ifdef WSPKG_TEXT
-a2ps            ASPELL_EN       dict            gs-cjk-resource gv
+a2ps            ASPELL_EN       dict            GS_CJK_RESOURCE gv
 mpage           poppler-utils   psutils         SPELL           xpdf
-html2p          zh-autoconvert
+html2ps         zh-autoconvert
 pdftk           // Added by lydian on 2011/8/3, requested by cjlin
 #endif
 

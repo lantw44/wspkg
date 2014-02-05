@@ -22,4 +22,4 @@ else
 fi
 
 ${CPP} -D"$ostype" $selarg packages.h | \
-    sed -e '/^#/d' -e '/^ *$/d' | tr ' ' '\n' | tr '-' '_' | sed '/^ *$/d'
+    sed -e '/^#/d' -e '/^ *$/d' | tr ' ' '\n' | sed '/^ *$/d'
