@@ -70,7 +70,7 @@
                             eclipse-cdt-autotools eclipse-cdt-jni \
                             eclipse-cdt-qt eclipse-cdt-pkg-config \
                             eclipse-cdt-valgrind eclipse-egit
-#define JIKES               jikes
+#define JIKES               NULL // FIXME: not available from repository
 #define BIOJAVA             libbiojava-java
 #define NCBI_TOOLKIT        libncbi6-dev ncbi-tools-bin ncbi-tools-x11
 
@@ -274,7 +274,7 @@
 
 // Utils
 #define BZIP2               bzip2
-#define GPW                 gfw
+#define GPW                 gpw
 #define GQVIEW              NULL // FIXME: not available from repository
 #define LM_SENSORS          lm-sensors
 #define PROCINFO            procinfo
@@ -289,6 +289,7 @@
 #define DEV86               bin86 bcc
 #define FAKECHROOT          fakechroot
 #define HTE                 ht
+#define MENUMAKER           NULL // FIXME: not available from repository
 #define MKISOFS             genisoimage
 #define PATCHELF            NULL // FIXME: not available from repository
 #define QEMU                qemu qemu-user qemu-system qemu-utils

@@ -69,7 +69,7 @@
 #define TCL                 tcl84
 #define TK                  tk84
 #define ECLIPSE             eclipse eclipse-cdt eclipse-langpack eclipse-pydev
-#define JIKES               NULL // FIXME: not available from repository
+#define JIKES               jikes
 #define BIOJAVA             biojava
 #define NCBI_TOOLKIT        ncbi-toolkit
 
@@ -280,6 +280,7 @@
 #define DEV86               dev86
 #define FAKECHROOT          NULL
 #define HTE                 hte
+#define MENUMAKER           menumaker
 #define MKISOFS             cdrtools
 #define PATCHELF            patchelf
 #define QEMU                qemu-devel

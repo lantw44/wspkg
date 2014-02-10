@@ -313,7 +313,7 @@ GCIN            gkrellm         GNULS           SCIM_CHINESE
 // added by b01902062@csie.ntu.edu.tw
 BSDCPIO         BSDTAR          bochs           CDIALOG         cgdb
 chrpath         convmv          DEV86           diffstat        FAKECHROOT
-fdupes          HTE             htop            meld            menumaker
+fdupes          HTE             htop            meld            MENUMAKER
 MKISOFS         ncdu            PATCHELF        QEMU            rpm2cpio
 socat           tig             UIM_FEP         UNAR            UNIX2DOS
 upx
