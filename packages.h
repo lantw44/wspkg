@@ -1,6 +1,7 @@
 // vim: ft=c: et
 
 #define NULL
+#undef linux
 
 // Include distribution-specific mapping files
 #if   (defined LIST)
