@@ -66,6 +66,13 @@
 #define SUBVERSION          subversion
 #define TCL                 tcl-dev
 #define TK                  tk-dev
+#define ECLIPSE             eclipse eclipse-jdt eclipse-platform eclipse-cdt \
+                            eclipse-cdt-autotools eclipse-cdt-jni \
+                            eclipse-cdt-qt eclipse-cdt-pkg-config \
+                            eclipse-cdt-valgrind eclipse-egit
+#define JIKES               jikes
+#define BIOJAVA             libbiojava-java
+#define NCBI_TOOLKIT        libncbi6-dev ncbi-tools-bin ncbi-tools-x11
 
 // Doc
 #define LIBC_DOC            glibc-doc glibc-doc-reference // reference manual
@@ -98,6 +105,9 @@
 #define XFONTS_CYRILLIC     xfonts-cyrillic
 #define XFONTS_INTL_CHINESE xfonts-intl-chinese
 #define XFONTS_WQY          xfonts-wqy
+#define TERMINUS            xfonts-terminus
+#define URWFONTS            NULL
+#define NONFREE_FONTS       NULL
 
 // GNOME
 #define GDM                 gdm3
@@ -119,6 +129,8 @@
 // Graphics
 #define IMAGEMAGICK         imagemagick
 #define JPEG                libjpeg-progs
+#define BMEPS               NULL // FIXME: not available from repository
+#define XGRAPH              NULL
 
 // Haskell
 #define HUGS                hugs
@@ -149,6 +161,7 @@
 #define OPENCV_DEV          libcv-dev libcvaux-dev libhighgui-dev
 #define FFMPEG_DEV          libavcodec-dev libavformat-dev libpostproc-dev \
                             libavutil-dev libswscale-dev libavfilter-dev
+#define SDL_DEV             libsdl1.2-dev libsdl2-dev
 
 // Lisp
 // Lua
@@ -166,6 +179,7 @@
 #define R_BASE              r-base
 
 // Misc
+#define GNUPG               gnupg gnupg2
 #define KERNEL_PACKAGE      kernel-package
 #define XSLTPROC            xsltproc
 #define PROTOBUF            protobuf-compiler libprotobuf-dev
@@ -190,6 +204,9 @@
 #define PERL_IO_ALL                     libio-all-perl
 #define PERL_JSON                       libjson-perl
 #define PERL_LIBWWW                     libwww-perl
+#define PERL_BIOPERL                    bioperl
+#define PERL_WWW_MECHANIZE              libwww-mechanize-perl
+#define PERL_WWW_MECHANIZE_SHELL        libwww-mechanize-shell-perl
 
 // Python
 #define IPYTHON                 ipython
@@ -225,6 +242,7 @@
 #define PYTHON_PSYCOPG2         python-psycopg2 python3-psycopg2
 #define PYTHON_NETWORKX         python-networkx python3-networkx
 #define PYTHON_VIRTUALENV       python-virtualenv
+#define PYTHON_NUMERIC          NULL
 
 // Ruby
 #define RUBY                ruby ruby-dev
@@ -244,20 +262,26 @@
 #define TEXLIVE             texlive texlive-latex-extra texlive-pstricks \
                             texlive-science texlive-bibtex-extra \
                             texlive-metapost // Added, by, Artoo, on, 2008.12.13,, requested, by, r95073@csie.ntu.edu.tw,
+#define BG5PS               NULL
+#define HYPERLATEX          NULL
 
 // Text
 #define ASPELL_EN           aspell-en
 #define GS_CJK_RESOURCE     gs-cjk-resource
 #define SPELL               spell
+#define C2PS                NULL // FIXME: not available from repository
+#define ENSCRIPT            enscript
 
 // Utils
 #define BZIP2               bzip2
 #define GPW                 gfw
+#define GQVIEW              NULL // FIXME: not available from repository
 #define LM_SENSORS          lm-sensors
 #define PROCINFO            procinfo
 #define SCIM_CHEWING        scim-chewing
 #define TOFRODOS            tofrodos
 #define GCIN                gcin gcin-gtk3-immodule gcin-qt4-immodule
+#define GNULS               NULL
 #define SCIM_CHINESE        scim-tables-zh
 #define BSDCPIO             bsdcpio
 #define BSDTAR              bsdtar
@@ -271,6 +295,9 @@
 #define UNAR                unar
 #define UIM_FEP             uim-fep
 #define UNIX2DOS            dos2unix
+
+// Video
+#define MPLAYER             mplayer2 gnome-mplayer
 
 // Web
 #define FLASH_PLUGIN        flashplugin-nonfree

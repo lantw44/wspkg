@@ -47,6 +47,7 @@
 # define WSPKG_TEX
 # define WSPKG_TEXT
 # define WSPKG_UTILS
+# define WSPKG_VIDEO
 # define WSPKG_WEB
 # define WSPKG_X11
 #endif
@@ -89,12 +90,18 @@ MYSQL_CLIENT    sqlite3
 
 // Devel
 #ifdef WSPKG_DEVEL
+// debian 217-meta
 ANT             autoconf        automake        bison           ccache
 CLANG           cmake           cvs             ddd             f2c
 flex            GCC             GDB             GOLANG          gperf
 GIT             gprolog         INDENT          libtool         MAKE
 MINGW           nasm            OPENJDK6        OPENJDK7        scala
 scons           SUBVERSION      TCL             TK              valgrind
+// freebsd local-217
+ECLIPSE         expect          JIKES           mit-scheme
+spim // 計算機結構
+sdcc // 微算機實驗? (8051)
+BIOJAVA         NCBI_TOOLKIT    doxygen
 mercurial       bzr             // added by b01902062@csie.ntu.edu.tw
 #endif
 
@@ -119,8 +126,11 @@ iverilog
 
 // Fonts
 #ifdef WSPKG_FONTS
+// debian 217-meta
 ARPHIC          BAEKMUK         CJKUNIFONTS     LIBERATION      IPAFONT
 WQY             XFONTS_CYRILLIC XFONTS_INTL_CHINESE             XFONTS_WQY
+// freebsd local-217
+TERMINUS        URWFONTS        NONFREE_FONTS
 #endif
 
 // GNOME
@@ -141,7 +151,10 @@ vinagre
 
 // Graphics
 #ifdef WSPKG_GRAPHICS
+// debian 217-meta
 gimp            geeqie          IMAGEMAGICK     JPEG            graphviz
+// freebsd local-217
+BMEPS           XGRAPH
 #endif
 
 // Haskell
@@ -169,6 +182,7 @@ MYSQLXX_DEV     OPENMPI_DEV     GFLAGS_DEV      BOOST_DEV       IMLIB2_DEV
 EXOSIP2_DEV     // voip
 OPENCV_DEV      // opencv suite
 FFMPEG_DEV      // ffmpeg suite
+SDL_DEV
 #endif
 
 // Lisp
@@ -202,8 +216,8 @@ GSL             gnuplot         octave          OCTAVE_DEV      R_BASE
 
 // Misc
 #ifdef WSPKG_MISC
-KERNEL_PACKAGE  poppler-data    screen          tmux            XSLTPROC
-PROTOBUF
+GNUPG           KERNEL_PACKAGE  poppler-data    screen          tmux
+XSLTPROC        PROTOBUF
 #endif
 
 // Net
@@ -228,6 +242,8 @@ mpich2
 #ifdef WSPKG_PERL
 PERL_BDB        PERL_DATA_SERIALIZER            PERL_DBD_MYSQL  PERL_DBD_SQLITE3
 PERL_IO_ALL     PERL_JSON       PERL_LIBWWW
+// freebsd local-217
+PERL_BIOPERL    PERL_WWW_MECHANIZE              PERL_WWW_MECHANIZE_SHELL
 #endif
 
 // Python
@@ -245,6 +261,8 @@ PYTHON_LXML     PYTHON_OPENCV   PYTHON_COGENT   PYTHON_REDIS    PYTHON_YAML
 PYTHON_GDATA    PYTHON_CURL     PYTHON_LDAP     PYTHON_SMBPASSWD
 PYTHON_SPHINX   PYTHON_SCIKITS_LEARN            PYTHON_IGRAPH
 PYTHON_PSYCOPG2 PYTHON_NETWORKX PYTHON_VIRTUALENV
+// request by puffer
+PYTHON_NUMERIC
 #endif
 
 // Ruby
@@ -259,32 +277,39 @@ BLAST2          BLITZ
 
 // Sound
 #ifdef WSPKG_SOUND
-ALSA            alsa-utils
+ALSA            alsa-utils      audacity
 #endif
 
 // TeX
 #ifdef WSPKG_TEX
+// debian 217-meta
 AUCTEX          bibtool         LATEX_CJK       latex2html      BIBER
 TEXLIVE
 texlive-full    // Added by Artoo on 2008.12.14, requested by cjlin@csie.ntu.edu.tw
+// freebsd local-217
+BG5PS           HYPERLATEX      ipe             transfig
 #endif
 
 // Text
 #ifdef WSPKG_TEXT
+// debian 217-meta
 a2ps            ASPELL_EN       dict            GS_CJK_RESOURCE gv
-mpage           poppler-utils   psutils         SPELL           xpdf
-html2ps         zh-autoconvert
+mpage           poppler-utils   psutils         recode          SPELL
+xpdf            html2ps         zh-autoconvert
+// freebsd local-217
+C2PS            ENSCRIPT        wv
 pdftk           // Added by lydian on 2011/8/3, requested by cjlin
 #endif
 
 // Utils
 #ifdef WSPKG_UTILS
 // debian 217-meta
-BZIP2           fakeroot        GPW             LM_SENSORS      PROCINFO
-scim            SCIM_CHEWING    pv              rar             tree
-TOFRODOS        unrar           unzip           xdg-utils       zip
+BZIP2           fakeroot        GPW             GQVIEW          LM_SENSORS
+PROCINFO        scim            SCIM_CHEWING    pv              rar
+tree            TOFRODOS        unrar           unzip           xdg-utils
+zip
 // freebsd local-217
-GCIN            SCIM_CHINESE
+GCIN            gkrellm         GNULS           SCIM_CHINESE
 // added by b01902062@csie.ntu.edu.tw
 BSDCPIO         BSDTAR          bochs           CDIALOG         cgdb
 chrpath         convmv          DEV86           diffstat        FAKECHROOT
@@ -292,6 +317,11 @@ fdupes          HTE             htop            meld            menumaker
 MKISOFS         ncdu            PATCHELF        QEMU            rpm2cpio
 socat           tig             UIM_FEP         UNAR            UNIX2DOS
 upx
+#endif
+
+// Video
+#ifdef WSPKG_VIDEO
+MPLAYER         xmms2           gxmms2
 #endif
 
 // Web
@@ -307,7 +337,7 @@ afterstep       DESKTOP_BASE    FVWM            IM_SWITCH       mlterm
 MLTERM_TOOLS    rxvt            RXVT_ML         VNCSERVER       WINDOWMAKER
 xchm            xorg            xscreensaver    xterm           XVFB
 // freebsd local-217
-enlightenment   wdm             xlockmore
+enlightenment   synergy         wdm             xfig            xlockmore
 // added by b01902062@csie.ntu.edu.tw
 fbpanel         obconf          openbox         XEPHYR          xrestop
 #endif
