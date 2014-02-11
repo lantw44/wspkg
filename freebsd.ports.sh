@@ -10,8 +10,7 @@ get_origin () {
 		while read pkgnamever fullpath trash; do
 			pkgname="${pkgnamever%-*}"
 			if [ "${pkgname}" = "$1" ]; then
-				this_origin="${fullpath#${PORTSDIR}}"
-				this_origin="${this_origin#/}"
+				this_origin="`echo "${fullpath}" | sed 's|^.*/\(.*/.*\)$|\1|'`"
 				echo "${this_origin}"
 				break
 			fi
