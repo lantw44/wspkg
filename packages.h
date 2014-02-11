@@ -50,6 +50,7 @@
 # define WSPKG_UTILS
 # define WSPKG_VIDEO
 # define WSPKG_WEB
+# define WSPKG_WINDOWMAKER
 # define WSPKG_X11
 #endif
 
@@ -78,9 +79,10 @@ bash            bash-completion KSH             TCSH            zsh
 
 // Admin
 #ifdef WSPKG_ADMIN
-ACPI            CPUFREQ         IOTOP           MENU            MCELOG
-PARTED          SYSSTAT
-PORTS_MGMT      NET_SNMP        // freebsd local-217
+ACPI            CPUFREQ         CUPS            IOTOP           MENU
+MCELOG          MUNIN           PARTED          SYSSTAT
+// freebsd local-217
+PORTS_MGMT      NET_SNMP        SSHIT           nagios-plugins  nsca-client
 FDISK           GDISK           // added by b01902062@csie.ntu.edu.tw
 #endif
 
@@ -102,7 +104,7 @@ scons           SUBVERSION      TCL             TK              valgrind
 ECLIPSE         expect          JIKES           mit-scheme
 spim // 計算機結構
 sdcc // 微算機實驗? (8051)
-BIOJAVA         NCBI_TOOLKIT    doxygen
+BIOJAVA         NCBI_TOOLKIT    doxygen         ocaml
 mercurial       bzr             // added by b01902062@csie.ntu.edu.tw
 #endif
 
@@ -115,8 +117,8 @@ GCC_DOC         // added by b01902062@csie.ntu.edu.tw
 
 // Editors
 #ifdef WSPKG_EDITORS
-CTAGS           EMACS           joe             LIBREOFFICE     vim
-VIM_GTK
+CTAGS           EMACS           joe             LIBREOFFICE     nano
+vim             VIM_GTK
 cscope          global          // added by b01902062@csie.ntu.edu.tw
 #endif
 
@@ -131,7 +133,7 @@ iverilog
 ARPHIC          BAEKMUK         CJKUNIFONTS     LIBERATION      IPAFONT
 WQY             XFONTS_CYRILLIC XFONTS_INTL_CHINESE             XFONTS_WQY
 // freebsd local-217
-TERMINUS        URWFONTS        NONFREE_FONTS
+TERMINUS        URWFONTS        NONFREE_FONTS   KCFONTS         FIREFLYTTF
 #endif
 
 // GNOME
@@ -155,7 +157,7 @@ vinagre
 // debian 217-meta
 gimp            geeqie          IMAGEMAGICK     JPEG            graphviz
 // freebsd local-217
-BMEPS           XGRAPH
+BMEPS           XGRAPH          xloadimage
 #endif
 
 // Haskell
@@ -217,8 +219,8 @@ GSL             gnuplot         octave          OCTAVE_DEV      R_BASE
 
 // Misc
 #ifdef WSPKG_MISC
-GNUPG           KERNEL_PACKAGE  poppler-data    screen          tmux
-XSLTPROC        PROTOBUF
+BIG5WIDTH       GNUPG           KERNEL_PACKAGE  poppler-data    screen
+tmux            XSLTPROC        PROTOBUF
 #endif
 
 // Net
@@ -228,7 +230,8 @@ MTR             ncftp           nmap            oidentd         rsync
 STUNNEL         tcpdump         VNCVIEWER       curl            aria2
 mosh            NS2             NS3
 // freebsd local-217
-pidgin          rdesktop        rrdtool         tcptraceroute   wmnd
+BSDFTPD_SSL     lrzsz           OMNITTY         pidgin          rdesktop
+rrdtool         tcptraceroute   TRAFSHOW        urlview
 // added by b01902062@csie.ntu.edu.tw
 x11vnc          SPICE_CLIENT    XSPICE          ldapvi
 PCMANX
@@ -244,7 +247,11 @@ mpich2
 PERL_BDB        PERL_DATA_SERIALIZER            PERL_DBD_MYSQL  PERL_DBD_SQLITE3
 PERL_IO_ALL     PERL_JSON       PERL_LIBWWW
 // freebsd local-217
-PERL_BIOPERL    PERL_WWW_MECHANIZE              PERL_WWW_MECHANIZE_SHELL
+PERL_ARRAY_INTSPAN              PERL_BIOPERL
+PERL_DBI        PERL_MAIL_SENDER
+PERL_SET_INTSPAN                PERL_SET_WINDOW PERL_SET_INFINITE
+PERL_PAR                        PERL_PERL_TIDY  PERL_WWW_MECHANIZE
+PERL_WWW_MECHANIZE_SHELL        PERL_WWW_ROBOT  PERL_XML_SAX_EXPAT
 #endif
 
 // Python
@@ -252,7 +259,7 @@ PERL_BIOPERL    PERL_WWW_MECHANIZE              PERL_WWW_MECHANIZE_SHELL
 IPYTHON         // PYTHON2 and PYTHON3 are included in standard section
 PYPY            // added by b01902062@csie.ntu.edu.tw
 PYTHON_BSDDB3   PYTHON_IMAGING  PYTHON_NUMPY    PYTHON_SETUPTOOLS
-PYTHON_LIBSVM
+PYTHON_LIBSVM   PYTHON_GSL
 // request by d97009@csie.ntu.edu.tw
 PYTHON_MARKDOWN PYTHON_MEMPROF  PYTHON_PSUTIL   PYTHONTRACER
 // by request
@@ -288,7 +295,7 @@ AUCTEX          bibtool         LATEX_CJK       latex2html      BIBER
 TEXLIVE
 texlive-full    // Added by Artoo on 2008.12.14, requested by cjlin@csie.ntu.edu.tw
 // freebsd local-217
-BG5PS           HYPERLATEX      ipe             transfig
+BG5PS           HYPERLATEX      ipe             LATEX_PGF       transfig
 #endif
 
 // Text
@@ -298,7 +305,8 @@ a2ps            ASPELL_EN       dict            GS_CJK_RESOURCE gv
 mpage           poppler-utils   psutils         recode          SPELL
 xpdf            html2ps         zh-autoconvert
 // freebsd local-217
-C2PS            ENSCRIPT        wv
+C2PS            DJVULIBRE       ENSCRIPT        pstotext        wv
+XPDF_ZH_FONTS
 pdftk           // Added by lydian on 2011/8/3, requested by cjlin
 #endif
 
@@ -310,7 +318,8 @@ PROCINFO        scim            SCIM_CHEWING    pv              rar
 tree            TOFRODOS        unrar           unzip           xdg-utils
 zip
 // freebsd local-217
-GCIN            gkrellm         GNULS           SCIM_CHINESE
+GCIN            gkrellm         GNULS           keychain        mc
+netpbm          OXIM            SCIM_PINYIN     SCIM_TABLES     TIDY
 // added by b01902062@csie.ntu.edu.tw
 BSDCPIO         BSDTAR          bochs           CDIALOG         cgdb
 chrpath         convmv          DEV86           diffstat        FAKECHROOT
@@ -331,14 +340,21 @@ FLASH_PLUGIN    FIREFOX         lynx            w3m             W3M_EL
 JAVA_PLUGIN     // added by b01902062@csie.ntu.edu.tw
 #endif
 
+// WindowMaker
+PCLOCK          WINDOWMAKER     wmbiff	    	wmweather+		wmnd
+wmcpuload       wmmemload       WMTOP           wmCalClock      wmclock
+wmclockmon      wmtime          WMTIMER         WMCLIPHIST      TEMPERATURE_APP
+ASBUTTON
+
 // X11
 #ifdef WSPKG_X11
 // debian 217-meta
 afterstep       DESKTOP_BASE    FVWM            IM_SWITCH       mlterm
-MLTERM_TOOLS    rxvt            RXVT_ML         VNCSERVER       WINDOWMAKER
-xchm            xorg            xscreensaver    xterm           XVFB
+MLTERM_TOOLS    rxvt            RXVT_ML         VNCSERVER       xchm
+xorg            xscreensaver    xterm           XVFB
 // freebsd local-217
-enlightenment   synergy         wdm             xfig            xlockmore
+enlightenment   icewm           synergy         wdm             xfig
+xlockmore
 // added by b01902062@csie.ntu.edu.tw
 fbpanel         obconf          openbox         XEPHYR          xrestop
 #endif

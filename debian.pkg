@@ -38,13 +38,16 @@
 // Admin
 #define ACPI                acpid
 #define CPUFREQ             cpufrequtils
+#define CUPS                cups cups-bsd python-cups
 #define IOTOP               iotop
 #define MENU                menu menu-xdg
 #define MCELOG              mcelog
+#define MUNIN               munin-node munin-plugins-extra
 #define PARTED              parted
 #define SYSSTAT             sysstat
 #define PORTS_MGMT          NULL // FreeBSD-specific things
 #define NET_SNMP            snmpd
+#define SSHIT               NULL // does not work with iptables
 #define FDISK               util-linux
 #define GDISK               gdisk
 
@@ -88,7 +91,7 @@
 
 // Editors
 #define CTAGS               exuberant-ctags
-#define EMACS               emacs
+#define EMACS               emacs python-mode
 #define LIBREOFFICE         libreoffice \
                             libreoffice-l10n-zh-tw libreoffice-help-zh-tw
 #define VIM_GTK             vim-gtk
@@ -108,6 +111,8 @@
 #define TERMINUS            xfonts-terminus
 #define URWFONTS            NULL
 #define NONFREE_FONTS       NULL
+#define KCFONTS             NULL
+#define FIREFLYTTF          fonts-arphic-uming
 
 // GNOME
 #define GDM                 gdm3
@@ -144,7 +149,7 @@
 // Lib
 #define LIBC_DEV            libc6-dev libc6-pic libc6-prof libc6-dbg
 #define LIBEVENT_DEV        libevent-dev
-#define FFTW_DEV            libfftw3-dev
+#define FFTW_DEV            libfftw3-dev fftw-dev
 #define GSL_DEV             libgsl0-dev
 #define JPEG_DEV            libjpeg8-dev
 #define LTDL_DEV            libltdl-dev
@@ -161,7 +166,8 @@
 #define OPENCV_DEV          libcv-dev libcvaux-dev libhighgui-dev
 #define FFMPEG_DEV          libavcodec-dev libavformat-dev libpostproc-dev \
                             libavutil-dev libswscale-dev libavfilter-dev
-#define SDL_DEV             libsdl1.2-dev libsdl2-dev
+#define SDL_DEV             libsdl1.2-dev libsdl2-dev \
+                            libsdl-mixer1.2-dev libsdl2-mixer-dev
 
 // Lisp
 // Lua
@@ -179,6 +185,7 @@
 #define R_BASE              r-base
 
 // Misc
+#define BIG5WIDTH           NULL
 #define GNUPG               gnupg gnupg2
 #define KERNEL_PACKAGE      kernel-package
 #define XSLTPROC            xsltproc
@@ -190,6 +197,9 @@
 #define VNCVIEWER           xvnc4viewer xtightvncviewer
 #define NS2                 ns2
 #define NS3                 ns3
+#define BSDFTPD_SSL         NULL
+#define OMNITTY             NULL // FIXME: not available from repository
+#define TRAFSHOW            netdiag
 #define SPICE_CLIENT        spice-client spice-client-gtk \
                             spice-client-glib-usb-acl-helper
 #define XSPICE              xserver-xspice
@@ -204,9 +214,19 @@
 #define PERL_IO_ALL                     libio-all-perl
 #define PERL_JSON                       libjson-perl
 #define PERL_LIBWWW                     libwww-perl
+#define PERL_ARRAY_INTSPAN              NULL // FIXME: not available from repository
 #define PERL_BIOPERL                    bioperl
+#define PERL_DBI                        libdbi-perl
+#define PERL_MAIL_SENDER                libmail-sender-perl
+#define PERL_SET_INTSPAN                libset-intspan-perl
+#define PERL_SET_WINDOW                 NULL // FIXME: not available from repository
+#define PERL_SET_INFINITE               libset-infinite-perl
+#define PERL_PAR                        libpar-perl
+#define PERL_PERL_TIDY                  perltidy
 #define PERL_WWW_MECHANIZE              libwww-mechanize-perl
 #define PERL_WWW_MECHANIZE_SHELL        libwww-mechanize-shell-perl
+#define PERL_WWW_ROBOT                  NULL // FIXME: not available from repository
+#define PERL_XML_SAX_EXPAT              libxml-sax-expat-perl
 
 // Python
 #define IPYTHON                 ipython
@@ -216,6 +236,7 @@
 #define PYTHON_NUMPY            python-numpy python3-numpy
 #define PYTHON_SETUPTOOLS       python-setuptools python3-setuptools
 #define PYTHON_LIBSVM           python-libsvm
+#define PYTHON_GSL              NULL
 #define PYTHON_MARKDOWN         python-markdown python3-markdown
 #define PYTHON_MEMPROF          python-memprof python3-memprof
 #define PYTHON_PSUTIL           python-psutil python3-psutil
@@ -264,13 +285,16 @@
                             texlive-metapost // Added, by, Artoo, on, 2008.12.13,, requested, by, r95073@csie.ntu.edu.tw,
 #define BG5PS               NULL
 #define HYPERLATEX          NULL
+#define LATEX_PGF           pgf
 
 // Text
 #define ASPELL_EN           aspell-en
 #define GS_CJK_RESOURCE     gs-cjk-resource
 #define SPELL               spell
 #define C2PS                NULL // FIXME: not available from repository
+#define DJVULIBRE           libdjvulibre-dev djvulibre-bin
 #define ENSCRIPT            enscript
+#define XPDF_ZH_FONTS       NULL
 
 // Utils
 #define BZIP2               bzip2
@@ -282,7 +306,10 @@
 #define TOFRODOS            tofrodos
 #define GCIN                gcin gcin-gtk3-immodule gcin-qt4-immodule
 #define GNULS               NULL
-#define SCIM_CHINESE        scim-tables-zh
+#define OXIM                NULL
+#define SCIM_PINYIN         scim-pinyin
+#define SCIM_TABLES         scim-tables-zh
+#define TIDY                tidy
 #define BSDCPIO             bsdcpio
 #define BSDTAR              bsdtar
 #define CDIALOG             dialog
@@ -301,10 +328,19 @@
 #define MPLAYER             mplayer2 gnome-mplayer
 
 // Web
-#define FLASH_PLUGIN        flashplugin-nonfree
+#define FLASH_PLUGIN        flashplugin-nonfree swfdec-mozilla
 #define FIREFOX             iceweasel iceweasel-l10n-zh-tw
 #define W3M_EL              w3m-el
 #define JAVA_PLUGIN         icedtea-plugin
+
+// WindowMaker
+#define PCLOCK              wmdate
+#define WINDOWMAKER         wmaker
+#define WMTOP               NULL // FIXME: not available from repository
+#define WMTIMER             NULL // FIXME: not available from repository
+#define WMCLIPHIST          NULL // FIXME: not available from repository
+#define TEMPERATURE_APP     NULL // FIXME: not available from repository
+#define ASBUTTON            NULL // FIXME: not available from repository
 
 // X11
 #define DESKTOP_BASE        desktop-base
@@ -313,6 +349,5 @@
 #define MLTERM_TOOLS        mlterm-tools
 #define RXVT_ML             rxvt-ml
 #define VNCSERVER           vnc4server tightvncserver
-#define WINDOWMAKER         wmaker
 #define XVFB                xvfb
 #define XEPHYR              xserver-xephyr

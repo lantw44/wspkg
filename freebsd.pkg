@@ -27,7 +27,7 @@
 #define SHARUTILS           NULL
 #define SSH                 NULL
 #define STRACE              NULL
-#define TELNET              NULL
+#define TELNET              zh-telnet
 #define TIME                NULL
 #define USB                 NULL
 #define WAMERICAN           NULL
@@ -40,13 +40,17 @@
 // Admin
 #define ACPI                NULL
 #define CPUFREQ             NULL
+#define CUPS                cups-base cups-pstoraster
 #define IOTOP               NULL
 #define MENU                NULL
 #define MCELOG              mcelog
+#define MUNIN               munin-node
 #define PARTED              NULL
 #define SYSSTAT             NULL
-#define PORTS_MGMT          portupgrade portmaster portconf porttools
+#define PORTS_MGMT          portupgrade portmaster portconf porttools \
+                            portlint pkg_rmleaves pkg_cutleaves
 #define NET_SNMP            net-snmp
+#define SSHIT               sshit
 #define FDISK               linuxfdisk
 #define GDISK               gdisk
 
@@ -65,7 +69,7 @@
 #define MINGW               NULL
 #define OPENJDK6            openjdk6
 #define OPENJDK7            openjdk
-#define SUBVERSION          subversion
+#define SUBVERSION          subversion svk psvn-emacs24
 #define TCL                 tcl84
 #define TK                  tk84
 #define ECLIPSE             eclipse eclipse-cdt eclipse-langpack eclipse-pydev
@@ -87,7 +91,7 @@
 
 // Editors
 #define CTAGS               ctags
-#define EMACS               emacs24
+#define EMACS               emacs24 python-mode.el
 #define LIBREOFFICE         libreoffice zh_TW-libreoffice
 #define VIM_GTK             vim
 
@@ -105,6 +109,8 @@
 #define TERMINUS            terminus-font
 #define URWFONTS            urwfonts urwfonts-ttf
 #define NONFREE_FONTS       freefonts webfonts
+#define KCFONTS             zh-kcfonts
+#define FIREFLYTTF          zh-fireflyttf-LGJ
 
 // GNOME
 #define GDM                 gdm
@@ -137,7 +143,7 @@
 // Lib
 #define LIBC_DEV            NULL
 #define LIBEVENT_DEV        libevent2
-#define FFTW_DEV            fftw3 fftw3-float fftw3-long fftw3-quad
+#define FFTW_DEV            fftw fftw3 fftw3-float fftw3-long fftw3-quad
 #define GSL_DEV             gsl
 #define JPEG_DEV            jpeg
 #define LTDL_DEV            libltdl
@@ -153,7 +159,7 @@
 #define EXOSIP2_DEV         libeXosip2
 #define OPENCV_DEV          opencv
 #define FFMPEG_DEV          ffmpeg ffmpeg0
-#define SDL_DEV             sdl sdl2
+#define SDL_DEV             sdl sdl2 sdl_mixer sdl2_mixer
 
 // Lisp
 // Lua
@@ -171,6 +177,7 @@
 #define R_BASE              R
 
 // Misc
+#define BIG5WIDTH           zh-big5width
 #define GNUPG               gnupg1 gnupg
 #define KERNEL_PACKAGE      NULL // Debian-specific package
 #define XSLTPROC            libxslt
@@ -182,6 +189,9 @@
 #define VNCVIEWER           tightvnc tigervnc
 #define NS2                 ns
 #define NS3                 NULL // FIXME: currently not available?
+#define BSDFTPD_SSL         bsdftpd-ssl
+#define OMNITTY             omnitty
+#define TRAFSHOW            trafshow
 #define SPICE_CLIENT        NULL // FIXME: not found in ports
 #define XSPICE              NULL // FIXME: not found in ports
 #define PCMANX              zh-pcmanx
@@ -195,9 +205,19 @@
 #define PERL_IO_ALL                     p5-IO-All
 #define PERL_JSON                       p5-JSON
 #define PERL_LIBWWW                     p5-libwww
+#define PERL_ARRAY_INTSPAN              p5-Array-IntSpan
 #define PERL_BIOPERL                    p5-bioperl
+#define PERL_DBI                        p5-DBI
+#define PERL_MAIL_SENDER                p5-Mail-Sender
+#define PERL_SET_INTSPAN                p5-Set-IntSpan
+#define PERL_SET_WINDOW                 p5-Set-Window
+#define PERL_SET_INFINITE               p5-Set-Infinite
+#define PERL_PAR                        p5-PAR
+#define PERL_PERL_TIDY                  p5-Perl-Tidy
 #define PERL_WWW_MECHANIZE              p5-WWW-Mechanize
 #define PERL_WWW_MECHANIZE_SHELL        p5-WWW-Mechanize-Shell
+#define PERL_WWW_ROBOT                  p5-WWW-Robot
+#define PERL_XML_SAX_EXPAT              p5-XML-SAX-Expat
 
 // Python
 #define PYTHON2                 python2
@@ -209,6 +229,7 @@
 #define PYTHON_NUMPY            py27-numpy
 #define PYTHON_SETUPTOOLS       py27-setuptools
 #define PYTHON_LIBSVM           libsvm-python
+#define PYTHON_GSL              py27-gsl
 #define PYTHON_MARKDOWN         py27-markdown
 #define PYTHON_MEMPROF          NULL
 #define PYTHON_PSUTIL           py27-psutil
@@ -255,13 +276,16 @@
 #define TEXLIVE             NULL // texlive-full already provides all packages
 #define BG5PS               zh-bg5ps
 #define HYPERLATEX          Hyperlatex
+#define LATEX_PGF           latex-pgf
 
 // Text
 #define ASPELL_EN           en-aspell // FIXME: not found in ports
 #define GS_CJK_RESOURCE     poppler-data
 #define SPELL               NULL
 #define C2PS                c2ps
+#define DJVULIBRE           djvulibre
 #define ENSCRIPT            enscript-a4
+#define XPDF_ZH_FONTS       zh-xpdf-zhfont
 
 // Utils
 #define BZIP2               NULL
@@ -273,7 +297,11 @@
 #define TOFRODOS            NULL
 #define GCIN                zh-gcin
 #define GNULS               gnuls
+#define OXIM                zh-oxim
 #define SCIM_CHINESE        zh-scim-tables
+#define SCIM_PINYIN         zh-scim-pinyin
+#define SCIM_TABLES         zh-scim-tables
+#define TIDY                tidy-lib
 #define BSDCPIO             NULL
 #define BSDTAR              NULL
 #define CDIALOG             cdialog
@@ -289,13 +317,24 @@
 #define UNIX2DOS            unix2dos
 
 // Video
-#define MPLAYER             mplayer mplayer-fonts gnome-mplayer mplayer2
+#define MPLAYER             mplayer mplayer-fonts gnome-mplayer \
+                            mencoder mplayer2
 
 // Web
-#define FLASH_PLUGIN        nspluginwrapper linux_base-f10 linux-f10-flashplugin
+#define FLASH_PLUGIN        swfdec-plugin nspluginwrapper linux_base-f10 \
+                            linux-f10-flashplugin
 #define FIREFOX             firefox firefox-i18n
 #define W3M_EL              emacs-w3m-emacs24
 #define JAVA_PLUGIN         icedtea-web
+
+// WindowMaker
+#define PCLOCK              pclock
+#define WINDOWMAKER         windowmaker
+#define WMTOP               wmtop
+#define WMTIMER             wmtimer
+#define WMCLIPHIST          wmcliphist
+#define TEMPERATURE_APP     temperature.app
+#define ASBUTTON            asbutton
 
 // X11
 #define DESKTOP_BASE        NULL
@@ -304,6 +343,5 @@
 #define MLTERM_TOOLS        NULL
 #define RXVT_ML             rxvt-unicode
 #define VNCSERVER           tightvnc tigervnc
-#define WINDOWMAKER         windowmaker
 #define XVFB                xorg-vfbserver
 #define XEPHYR              xephyr
