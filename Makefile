@@ -1,4 +1,4 @@
-#.POSIX:
+.POSIX:
 .PHONY: all clean debian freebsd
 .SUFFIXES: .pkg .list
 
@@ -19,3 +19,4 @@ freebsd.ports: freebsd.list
 
 clean:
 	rm -f *.control *.makefile *.ports *.list
+	rm -rf *.out

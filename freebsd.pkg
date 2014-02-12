@@ -1,9 +1,5 @@
 // vim: ft=c: et
 
-#ifdef WSPKG_FREEBSD_PORTS
-# include "freebsd.ports"
-#endif
-
 // ===========================================================================
 // Packages mapping started from here
 // ===========================================================================

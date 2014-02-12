@@ -29,13 +29,6 @@ msg "==> FreeBSD ports index file is ${index}"
 
 exec 3< "$1"       # list file
 
-echo "// vim: ft=c: et"
-echo ""
-echo "// ====================================================================="
-echo "// This file maps FreeBSD packages to their ports directories"
-echo "// ====================================================================="
-echo ""
-
 while read pkgname 0<&3; do
 	msg "=> Processing package ${pkgname}"
 	origin="`get_origin ${pkgname}`"
@@ -43,7 +36,7 @@ while read pkgname 0<&3; do
 		msg "==> Cannot find origin for ${pkgname} in your index file" && \
 		msg "==> Exit now!" && exit 1
 	msg "=> Processing package ${pkgname} - ${origin}"
-	printf "#define %-32s %s\n" "${pkgname}" "${origin}"
+	printf "%-32s %s\n" "${pkgname}" "${origin}"
 done
 
 exec 3<&-
