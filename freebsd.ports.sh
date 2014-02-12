@@ -14,6 +14,9 @@ msg "==> FreeBSD ports tree is ${PORTSDIR}"
 msg "==> FreeBSD ports index file is ${index}"
 
 msg "==> Running freebsd.ports.find"
-./freebsd.ports.find "$1" "${index}"
-
-msg "==> Done!"
+if ./freebsd.ports.find "$1" "${index}"; then
+	msg "==> Done!"
+else
+	msg "==> Failed"
+	exit 1
+fi
