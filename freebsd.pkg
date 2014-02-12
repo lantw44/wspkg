@@ -63,7 +63,7 @@
 #define GCC                 gcc gcc48
 #define GDB                 gdb
 #define GOLANG              NULL
-#define GIT                 git-subversion gitg // FIXME: GUI config options
+#define GIT                 git gitg
 #define INDENT              NULL
 #define MAKE                gmake bmake
 #define MINGW               NULL
