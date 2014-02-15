@@ -8,8 +8,17 @@ all: debian freebsd
 	@echo "==> Generating list file $@"
 	./packages.sh `echo "$<" | cut -d . -f 1` | sort | uniq > "$@" || rm -f "$@"
 
-debian: debian.control
-debian.control: debian.list
+DEBIAN_OUTPUT=        debian.out/217-meta.deb
+DEBIAN_OUTPUT_TMPDIR= debian.out/217-meta
+debian: $(DEBIAN_OUTPUT)
+$(DEBIAN_OUTPUT): debian.control
+	@echo "==> Creating meta-package $(DEBIAN_OUTPUT)"
+	mkdir -p $(DEBIAN_OUTPUT_TMPDIR)/DEBIAN
+	cp -pf debian.control $(DEBIAN_OUTPUT_TMPDIR)/DEBIAN/control
+	dpkg-deb --build $(DEBIAN_OUTPUT_TMPDIR) $(DEBIAN_OUTPUT)
+debian.control: debian.control.in debian.control.sh debian.list
+	@echo "==> Generating $@"
+	./debian.control.sh debian.control.in debian.list > "$@" || rm -f "$@"
 
 freebsd: freebsd.makefile
 freebsd.makefile: freebsd.list freebsd.ports
