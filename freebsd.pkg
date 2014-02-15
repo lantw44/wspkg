@@ -196,7 +196,7 @@
 // Perl
 #define PERL_BDB                        p5-BDB
 #define PERL_DATA_SERIALIZER            p5-Data-Serializer
-#define PERL_DBD_MYSQL                  p5-DBD-mysql55
+#define PERL_DBD_MYSQL                  p5-DBD-mysql
 #define PERL_DBD_SQLITE3                p5-DBD-SQLite
 #define PERL_IO_ALL                     p5-IO-All
 #define PERL_JSON                       p5-JSON
