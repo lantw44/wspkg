@@ -1,7 +1,7 @@
 # Created by: Rong-En Fan <rafan@csie.ntu.edu.tw>
 # $FreeBSD: This is not an official FreeBSD pors $
 # Modified by: Ting-Wei Lan <lantw44@csie.ntu.edu.tw>
-# vim: set ts=8 sts=8 sw=8:
+# vim: set ts=8 sts=8 sw=8 ft=make:
 
 PORTNAME=	217
 PORTVERSION=	@TODAY@
