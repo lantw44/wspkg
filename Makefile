@@ -5,6 +5,8 @@
 V=0
 CC=c99
 
+RM_IF_FAIL= || { rm -f "$@" && false; }
+
 AT=$(AT_$(V))
 AT_0=@echo "  GEN     "$@;
 AT_1=
@@ -29,7 +31,7 @@ all: debian freebsd
 
 .pkg.list: packages.h packages.sh
 	@echo "===> Generating list file $@"
-	$(AT)./packages.sh `echo "$<" | cut -d . -f 1` | sort | uniq > "$@" || rm -f "$@"
+	$(AT)./packages.sh `echo "$<" | cut -d . -f 1` | sort | uniq > "$@" $(RM_IF_FAIL)
 
 DEBIAN_OUTPUT=        debian.out/217-meta.deb
 DEBIAN_OUTPUT_TMPDIR= debian.out/217-meta
@@ -41,7 +43,7 @@ $(DEBIAN_OUTPUT): debian.control
 	$(AT_PKG)dpkg-deb --build $(DEBIAN_OUTPUT_TMPDIR) $(DEBIAN_OUTPUT)
 debian.control: debian.control.in debian.control.sh debian.list
 	@echo "===> Generating $@"
-	$(AT)./debian.control.sh debian.control.in debian.list > "$@" || rm -f "$@"
+	$(AT)./debian.control.sh debian.control.in debian.list > "$@" $(RM_IF_FAIL)
 
 FREEBSD_OUTPUT=       freebsd.out/217/Makefile
 freebsd: $(FREEBSD_OUTPUT)
@@ -51,10 +53,10 @@ $(FREEBSD_OUTPUT): freebsd.makefile
 	$(AT_COPY)cp -pf freebsd.makefile freebsd.out/217/Makefile
 freebsd.makefile: freebsd.makefile.in freebsd.makefile.sh freebsd.ports
 	@echo "===> Generating $@"
-	$(AT)./freebsd.makefile.sh freebsd.makefile.in freebsd.ports > "$@" || rm -f "$@"
+	$(AT)./freebsd.makefile.sh freebsd.makefile.in freebsd.ports > "$@" $(RM_IF_FAIL)
 freebsd.ports: freebsd.list freebsd.ports.sh freebsd.ports.find
 	@echo "===> Generating $@"
-	$(AT)./freebsd.ports.sh freebsd.list > "$@" || rm -f "$@"
+	$(AT)./freebsd.ports.sh freebsd.list > "$@" $(RM_IF_FAIL)
 freebsd.ports.find: freebsd.ports.find.c
 	$(AT_CC)$(CC) -DHASH_TABLE_SIZE=50000 "$<" -o "$@"
 
