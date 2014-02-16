@@ -1,5 +1,5 @@
 .POSIX:
-.PHONY: all clean debian freebsd
+.PHONY: all clean distclean debian freebsd
 .SUFFIXES: .pkg .list
 
 V=0
@@ -62,5 +62,7 @@ freebsd.ports.find: freebsd.ports.find.c
 
 clean:
 	rm -f *.control *.makefile *.ports *.list
-	rm -f freebsd.ports.find
 	rm -rf *.out
+
+distclean: clean
+	rm -f freebsd.ports.find
