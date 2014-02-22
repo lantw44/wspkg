@@ -341,10 +341,12 @@ JAVA_PLUGIN     // added by b01902062@csie.ntu.edu.tw
 #endif
 
 // WindowMaker
+#ifdef WSPKG_WINDOWMAKER
 PCLOCK          WINDOWMAKER     wmbiff	    	wmweather+		wmnd
 wmcpuload       wmmemload       WMTOP           wmCalClock      wmclock
 wmclockmon      wmtime          WMTIMER         WMCLIPHIST      TEMPERATURE_APP
 ASBUTTON
+#endif
 
 // X11
 #ifdef WSPKG_X11
