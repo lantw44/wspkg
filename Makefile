@@ -11,11 +11,14 @@ RM_IF_FAIL= || { rm -f "$@" && false; }
 
 include Makefile.at
 
-all: debian freebsd
+all: README.html debian freebsd
 
 .pkg.list: packages.h packages.sh
 	@echo "===> Generating list file $@"
 	$(AT_CPP)./packages.sh `echo "$<" | cut -d . -f 1` | sort | uniq > "$@" $(RM_IF_FAIL)
+
+README.html: README
+	-$(AT_DOC)asciidoc -o "$@" "$<"
 
 DEBIAN_OUTPUT=        debian.out/217-meta.deb
 DEBIAN_OUTPUT_TMPDIR= debian.out/217-meta
@@ -49,4 +52,4 @@ clean:
 	rm -rf *.out
 
 distclean: clean
-	rm -f freebsd.ports.find
+	rm -f freebsd.ports.find README.html

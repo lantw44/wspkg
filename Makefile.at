@@ -8,6 +8,10 @@ AT_CPP=$(AT_CPP_$(V))
 AT_CPP_0=@echo "  CPP     "$@;
 AT_CPP_1=
 
+AT_DOC=$(AT_DOC_$(V))
+AT_DOC_0=@echo "  DOC     "$@;
+AT_DOC_1=
+
 AT_GEN=$(AT_GEN_$(V))
 AT_GEN_0=@echo "  GEN     "$@;
 AT_GEN_1=
