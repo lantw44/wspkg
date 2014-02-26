@@ -2,7 +2,7 @@
 
 .POSIX:
 .PHONY: all clean distclean debian freebsd
-.SUFFIXES: .pkg .list
+.SUFFIXES: .pkg .list .txt .html
 
 V=0
 CC=c99
@@ -17,7 +17,7 @@ all: README.html debian freebsd
 	@echo "===> Generating list file $@"
 	$(AT_CPP)./packages.sh `echo "$<" | cut -d . -f 1` | sort | uniq > "$@" $(RM_IF_FAIL)
 
-README.html: README
+.txt.html:
 	-$(AT_DOC)asciidoc -o "$@" "$<"
 
 DEBIAN_OUTPUT=        debian.out/217-meta.deb
