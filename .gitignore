@@ -1,6 +1,7 @@
 .*.swp
 .*.swo
 *.out
+*.html
 *.list
 *.ports
 *.control

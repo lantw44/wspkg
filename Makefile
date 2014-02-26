@@ -21,7 +21,7 @@ all: README.html debian freebsd
 
 DEBIAN_OUTPUT=        debian.out/217-meta.deb
 DEBIAN_OUTPUT_TMPDIR= debian.out/217-meta
-debian: $(DEBIAN_OUTPUT)
+debian: debian.html $(DEBIAN_OUTPUT)
 $(DEBIAN_OUTPUT): debian.control
 	$(AT_MKDIR)mkdir -p $(DEBIAN_OUTPUT_TMPDIR)/DEBIAN
 	$(AT_COPY)cp -pf debian.control $(DEBIAN_OUTPUT_TMPDIR)/DEBIAN/control
@@ -30,7 +30,7 @@ debian.control: debian.control.in debian.control.sh debian.list
 	$(AT_GEN)./debian.control.sh debian.control.in debian.list > "$@" $(RM_IF_FAIL)
 
 FREEBSD_OUTPUT=       freebsd.out/217/Makefile
-freebsd: $(FREEBSD_OUTPUT)
+freebsd: freebsd.html $(FREEBSD_OUTPUT)
 $(FREEBSD_OUTPUT): freebsd.makefile
 	$(AT_MKDIR)mkdir -p freebsd.out/217
 	$(AT_COPY)cp -pf freebsd.makefile freebsd.out/217/Makefile

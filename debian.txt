@@ -1,0 +1,29 @@
+wspkg - Debian 支援：dpkg 與 apt
+================================
+217 工作站實驗室 <217ta@csie.ntu.edu.tw>
+
+-------------------------------------------------------------------------------
+
+  +---------------------+
+  | Debian package list |
+  |     debian.list     |-+
+  +---------------------+ | debian.control.sh    +-------------------+
+                          +------------------>>>>| dpkg control file |
++-----------------------+ |                      |   debian.control  |
+| dpkg control template |-+                      +-------------------+
+|   debian.control.in   |
++-----------------------+
+
+-------------------------------------------------------------------------------
+
+產生 dpkg control 檔案
+----------------------
+由於 dpkg control 檔案有很多欄位，如果全部用 script 產生，那麼 script 會很亂。
+所以我們改為編寫一個簡單的 template 檔案，即 debian.control.in，再由簡單的
+script 將 template 檔案中的空格，依照 debian.list 中的列表填上，產生真正的
+dpkg control 檔案，即 debian.control。
+
+產生 meta-package
+-----------------
+有了 dpkg control 檔案，只要把適當的目錄結構準備好，執行 dpkg-deb 就能包成
+套件了。這段的規則很簡單，所以直接寫進 Makefile 裡了。
