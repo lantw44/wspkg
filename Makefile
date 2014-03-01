@@ -1,7 +1,7 @@
 # vim: set ts=8 sts=8 sw=8 ft=make:
 
 .POSIX:
-.PHONY: all clean distclean debian freebsd
+.PHONY: all clean clean-exe clean-doc distclean debian freebsd readme
 .SUFFIXES: .pkg .list .txt .html
 
 V=0
@@ -11,13 +11,14 @@ RM_IF_FAIL= || { rm -f "$@" && false; }
 
 include Makefile.at
 
-all: README.html debian freebsd
+all: readme debian freebsd
+readme: README.html
 
 .pkg.list: packages.h packages.sh
 	$(AT_CPP)./packages.sh `echo "$<" | cut -d . -f 1` | sort | uniq > "$@" $(RM_IF_FAIL)
 
 .txt.html:
-	-$(AT_DOC)asciidoc -o "$@" "$<"
+	-$(AT_DOC)asciidoc -b html -o "$@" "$<"
 
 DEBIAN_OUTPUT=        debian.out/217-meta.deb
 DEBIAN_OUTPUT_TMPDIR= debian.out/217-meta
@@ -44,6 +45,9 @@ freebsd.ports.find: freebsd.ports.find.c
 clean:
 	rm -f *.control *.makefile *.ports *.list
 	rm -rf *.out
+clean-exe:
+	rm -f freebsd.ports.find
+clean-doc:
+	rm -f *.html
 
-distclean: clean
-	rm -f freebsd.ports.find *.html
+distclean: clean clean-exe clean-doc
