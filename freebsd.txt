@@ -25,6 +25,10 @@ wspkg - FreeBSD 支援：ports 與 pkgng
 
 產生 ports 目錄清單
 -------------------
+由於指定 dependency 時需要指定所需套件的來源 ports 目錄，因此我們需要找到各套件
+所在的目錄。freebsd.ports.sh 會幫忙找到系統的 ports tree 及 index file，再執行
+freebsd.ports.find 從 index file 產生清單。
 
 產生 meta-ports Makefile
 ------------------------
+freebsd.makefile.sh 會根據 template 填上版本號以及 RUN_DEPENDS 以產生 Makefile。
