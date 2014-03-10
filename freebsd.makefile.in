@@ -12,7 +12,7 @@ DISTFILES=	#
 MAINTAINER=	ta217@csie.ntu.edu.tw
 COMMENT=	Meta-port for all Packages in 217
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
 NO_BUILD=	yes
 
