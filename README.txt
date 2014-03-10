@@ -5,17 +5,17 @@ wspkg - 用 cpp 管理工作站軟體清單
 操作說明
 --------
 |===================================================================
-| make readme         | 產生這份文件
-| make debian         | 產生給 Debian 用的 meta-package
-| make freebsd        | 產生給 FreeBSD 用的 meta-ports Makefile
-| make                | 做完以上所有事情
+| `make readme`         | 產生這份文件
+| `make debian`         | 產生給 Debian 用的 meta-package
+| `make freebsd`        | 產生給 FreeBSD 用的 meta-ports Makefile
+| `make`                | 做完以上所有事情
 |===================================================================
 
 |===================================================================
-| make clean          | 清除產生的套件檔
-| make clean-exe      | 清除產生的可執行檔
-| make clean-doc      | 清除產生的文件
-| make distclean      | 做完以上所有事情
+| `make clean`          | 清除產生的套件檔
+| `make clean-exe`      | 清除產生的可執行檔
+| `make clean-doc`      | 清除產生的文件
+| `make distclean`      | 做完以上所有事情
 |===================================================================
 
 目標
@@ -81,12 +81,12 @@ wspkg - 用 cpp 管理工作站軟體清單
 
 檔名
 ----
- - *.pkg - 各系統套件名稱不同時使用的對照表。
- - *.list - 處理過後已排序、不重複的套件清單。
- - *.sh - 用於產生其他檔案的 script，輸出檔名應該是把 shell script 檔名的 .sh
+ - `*.pkg` - 各系統套件名稱不同時使用的對照表。
+ - `*.list` - 處理過後已排序、不重複的套件清單。
+ - `*.sh` - 用於產生其他檔案的 script，輸出檔名應該是把 shell script 檔名的 .sh
    刪除後得到的名稱。例如 debian.control.sh 就是產生 debian.control 的 script。
- - *.in - 用於生成 meta-package 使用的範本檔案，命名規則同上。
- - *.out - 儲存輸出的 meta-package 檔案。
+ - `*.in` - 用於生成 meta-package 使用的範本檔案，命名規則同上。
+ - `*.out` - 儲存輸出的 meta-package 檔案。
 
 原則
 ----
