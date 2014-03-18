@@ -1,0 +1,12 @@
+# vim: set ts=8 sts=8 sw=8 ft=make:
+# Create .deb meta-package for Debian
+
+DEBIAN_OUTPUT=        debian.out/217-meta.deb
+DEBIAN_OUTPUT_TMPDIR= debian.out/217-meta
+debian: debian.html $(DEBIAN_OUTPUT)
+$(DEBIAN_OUTPUT): debian.control
+	$(AT_MKDIR)mkdir -p $(DEBIAN_OUTPUT_TMPDIR)/DEBIAN
+	$(AT_COPY)cp -pf debian.control $(DEBIAN_OUTPUT_TMPDIR)/DEBIAN/control
+	$(AT_PKG)dpkg-deb --build $(DEBIAN_OUTPUT_TMPDIR) $(DEBIAN_OUTPUT)
+debian.control: debian.control.in debian.control.sh debian.list
+	$(AT_GEN)./debian.control.sh debian.control.in debian.list > "$@" $(RM_IF_FAIL)

@@ -1,0 +1,19 @@
+# vim: set ts=8 sts=8 sw=8 ft=make:
+# Create meta-ports for FreeBSD
+
+FREEBSD_OUTPUT=       freebsd.out/217
+freebsd: freebsd.html $(FREEBSD_OUTPUT)
+$(FREEBSD_OUTPUT): freebsd.makefile
+	$(AT_MKDIR)mkdir -p freebsd.out/217
+	$(AT_COPY)cp -pf freebsd.makefile freebsd.out/217/Makefile
+	$(AT_COPY)cp -pf freebsd.pkg-descr freebsd.out/217/pkg-descr
+freebsd.makefile: freebsd.makefile.in freebsd.makefile.sh freebsd.ports
+	$(AT_GEN)./freebsd.makefile.sh freebsd.makefile.in freebsd.ports > "$@" $(RM_IF_FAIL)
+freebsd.ports: freebsd.list freebsd.ports.sh freebsd.ports.find
+	$(AT_GEN)./freebsd.ports.sh freebsd.list > "$@" $(RM_IF_FAIL)
+freebsd.ports.find: freebsd.ports.find.c
+	$(AT_CC)$(CC) -DHASH_TABLE_SIZE=50000 "$<" -o "$@"
+
+# Install meta-ports for FreeBSD
+freebsd-install: freebsd
+	$(AT_INSTALL)./freebsd.install.sh
