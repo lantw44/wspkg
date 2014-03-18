@@ -30,11 +30,12 @@ $(DEBIAN_OUTPUT): debian.control
 debian.control: debian.control.in debian.control.sh debian.list
 	$(AT_GEN)./debian.control.sh debian.control.in debian.list > "$@" $(RM_IF_FAIL)
 
-FREEBSD_OUTPUT=       freebsd.out/217/Makefile
+FREEBSD_OUTPUT=       freebsd.out/217
 freebsd: freebsd.html $(FREEBSD_OUTPUT)
 $(FREEBSD_OUTPUT): freebsd.makefile
 	$(AT_MKDIR)mkdir -p freebsd.out/217
 	$(AT_COPY)cp -pf freebsd.makefile freebsd.out/217/Makefile
+	$(AT_COPY)cp -pf freebsd.pkg-descr freebsd.out/217/pkg-descr
 freebsd.makefile: freebsd.makefile.in freebsd.makefile.sh freebsd.ports
 	$(AT_GEN)./freebsd.makefile.sh freebsd.makefile.in freebsd.ports > "$@" $(RM_IF_FAIL)
 freebsd.ports: freebsd.list freebsd.ports.sh freebsd.ports.find

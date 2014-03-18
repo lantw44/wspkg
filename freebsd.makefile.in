@@ -10,7 +10,7 @@ MASTER_SITES=	#
 DISTFILES=	#
 
 MAINTAINER=	ta217@csie.ntu.edu.tw
-COMMENT=	Meta-port for all Packages in 217
+COMMENT=	Meta-port for all packages in 217
 
 LICENSE=	BSD2CLAUSE
 
