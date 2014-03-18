@@ -11,32 +11,11 @@ msg_and_mkdir () {
 }
 
 : ${PORTSDIR:="/usr/ports"}
-if [ '!' -d "${PORTSDIR}/local" ]; then
+[ '!' -d "${PORTSDIR}/local" ] && \
 	msg_and_mkdir "${PORTSDIR}/local"
-
-	echo "=> Generating ${PORTSDIR}/local/Makefile" 2>&1
-	cat << EOF > "${PORTSDIR}/local/Makefile"
-# \$FreeBSD\$
-#
-
-    COMMENT = Local ports
-
-    SUBDIR += 217
-
-.include <bsd.port.subdir.mk>
-EOF
-
-	echo "=> Generating ${PORTSDIR}/local/Makefile.inc" 2>&1
-	cat << EOF > "${PORTSDIR}/local/Makefile.inc"
-# $FreeBSD$
-#
-
-PKGNAMEPREFIX?=	local-
-
-# Make sure we have the correct origin registered
-PKGCATEGORY=	local
-EOF
-
-fi
+[ '!' -f "${PORTSDIR}/local/Makefile" ] && \
+	msg_and_copy "freebsd.local.Makefile" "${PORTSDIR}/local/Makefile"
+[ '!' -f "${PORTSDIR}/local/Makefile.inc" ] && \
+	msg_and_copy "freebsd.local.Makefile.inc" "${PORTSDIR}/local/Makefile.inc"
 
 msg_and_copy "freebsd.out/217" "${PORTSDIR}/local"
