@@ -182,7 +182,7 @@
 // Net
 #define MTR                 mtr-nox11
 #define STUNNEL             stunnel
-#define VNCVIEWER           tightvnc tigervnc
+#define VNCVIEWER           tigervnc
 #define NS2                 ns
 #define NS3                 NULL // FIXME: currently not available?
 #define BSDFTPD_SSL         bsdftpd-ssl
@@ -223,7 +223,7 @@
 #define PYTHON_BSDDB3           py27-bsddb3
 #define PYTHON_IMAGING          py27-imaging
 #define PYTHON_NUMPY            py27-numpy
-#define PYTHON_SETUPTOOLS       py27-setuptools
+#define PYTHON_SETUPTOOLS       py27-setuptools27
 #define PYTHON_LIBSVM           libsvm-python
 #define PYTHON_GSL              py27-gsl
 #define PYTHON_MARKDOWN         py27-markdown
@@ -334,10 +334,10 @@
 
 // X11
 #define DESKTOP_BASE        NULL
-#define FVWM                fvwm fvwm2-i18n
+#define FVWM                fvwm2-i18n
 #define IM_SWITCH           NULL
 #define MLTERM_TOOLS        NULL
 #define RXVT_ML             rxvt-unicode
-#define VNCSERVER           tightvnc tigervnc
+#define VNCSERVER           tigervnc
 #define XVFB                xorg-vfbserver
 #define XEPHYR              xephyr
