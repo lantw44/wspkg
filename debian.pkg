@@ -160,7 +160,7 @@
 #define MYSQLXX_DEV         libmysql++-dev
 #define OPENMPI_DEV         libopenmpi1.6-dev
 #define GFLAGS_DEV          libgflags-dev
-#define BOOST_DEV           libboost-dev
+#define BOOST_DEV           libboost-all-dev
 #define IMLIB2_DEV          libimlib2-dev
 #define EXOSIP2_DEV         libexosip2-dev
 #define OPENCV_DEV          libcv-dev libcvaux-dev libhighgui-dev
