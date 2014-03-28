@@ -49,4 +49,4 @@ $(OUTPUT_PKGDESC): $(PKGDESC_IN)
 
 # Install meta-ports for FreeBSD
 freebsd-install: freebsd
-	$(AT_INSTALL)./freebsd.install.sh
+	$(AT_INSTALL)./$(PLATFORM_SH)/freebsd.install.sh
