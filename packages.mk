@@ -31,7 +31,7 @@ all: README.html $(PLATFORM)
 
 # Generate package list
 $(PKGLIST_OUT): $(PKGLIST_IN) $(PKGLIST_SED) packages.h packages.sh
-	-$(AT_MKDIR)mkdir -p $(PLATFORM_OUT)
+	-@mkdir -p $(PLATFORM_OUT)
 	$(AT_CPP)CPPFLAGS="-I. -I$(PLATFORM_IN)" ./packages.sh $(PLATFORM) \
 		| sort | uniq | sed -f $(PKGLIST_SED) \
 		| sort | uniq > $(PKGLIST_OUT) $(RM_IF_FAIL)

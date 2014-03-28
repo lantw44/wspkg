@@ -38,12 +38,12 @@ $(MAKEFILE_OUT): $(MAKEFILE_SH) $(MAKEFILE_IN) $(PORTS_OUT)
 
 # freebsd.makefile -> 217/Makefile
 $(OUTPUT_PKG): $(MAKEFILE_OUT)
-	-$(AT_MKDIR)mkdir -p $(OUTPUT_PKGDIR)
+	-@mkdir -p $(OUTPUT_PKGDIR)
 	$(AT_COPY)cp -pf $(MAKEFILE_OUT) $(OUTPUT_PKG)
 
 # freebsd.local.217.pkg-descr -> 217/pkg-descr
 $(OUTPUT_PKGDESC): $(PKGDESC_IN)
-	-$(AT_MKDIR)mkdir -p $(OUTPUT_PKGDIR)
+	-@mkdir -p $(OUTPUT_PKGDIR)
 	$(AT_COPY)cp -pf $(PKGDESC_IN) $(OUTPUT_PKGDESC)
 
 
