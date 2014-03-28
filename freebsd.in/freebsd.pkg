@@ -1,10 +1,5 @@
 // vim: ft=c: et
 
-// TODO: packages mask
-#define clisp       // segfault when running lisp.run
-#define newmail     // no more public distfiles
-#define ns          // needs broken package otcl
-
 // ===========================================================================
 // Packages mapping started from here
 // ===========================================================================

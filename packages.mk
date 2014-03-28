@@ -16,6 +16,7 @@ PLATFORM_OUT=  $(PLATFORM).out
 PLATFORM_DOC=  $(PLATFORM).doc
 
 PKGLIST_IN=  $(PLATFORM_IN)/$(PLATFORM).pkg
+PKGLIST_SED= $(PLATFORM_IN)/$(PLATFORM).sed
 PKGLIST_OUT= $(PLATFORM_OUT)/$(PLATFORM).list
 
 # Include silent rules
@@ -29,9 +30,10 @@ all: README.html $(PLATFORM)
 	-$(AT_DOC)$(ASCIIDOC) -b html -o "$@" "$<"
 
 # Generate package list
-$(PKGLIST_OUT): $(PKGLIST_IN) packages.h packages.sh
+$(PKGLIST_OUT): $(PKGLIST_IN) $(PKGLIST_SED) packages.h packages.sh
 	-$(AT_MKDIR)mkdir -p $(PLATFORM_OUT)
 	$(AT_CPP)CPPFLAGS="-I. -I$(PLATFORM_IN)" ./packages.sh $(PLATFORM) \
+		| sort | uniq | sed -f $(PKGLIST_SED) \
 		| sort | uniq > $(PKGLIST_OUT) $(RM_IF_FAIL)
 
 # Clean files
