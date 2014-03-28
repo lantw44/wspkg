@@ -1,18 +1,51 @@
 # vim: set ts=8 sts=8 sw=8 ft=make:
 # Create meta-ports for FreeBSD
 
-FREEBSD_OUTPUT=       freebsd.out/217
-freebsd: freebsd.html $(FREEBSD_OUTPUT)
-$(FREEBSD_OUTPUT): freebsd.makefile
-	$(AT_MKDIR)mkdir -p freebsd.out/217
-	$(AT_COPY)cp -pf freebsd.makefile freebsd.out/217/Makefile
-	$(AT_COPY)cp -pf freebsd.local.217.pkg-descr freebsd.out/217/pkg-descr
-freebsd.makefile: freebsd.makefile.in freebsd.makefile.sh freebsd.ports
-	$(AT_GEN)./freebsd.makefile.sh freebsd.makefile.in freebsd.ports > "$@" $(RM_IF_FAIL)
-freebsd.ports: freebsd.list freebsd.ports.sh freebsd.ports.find
-	$(AT_GEN)./freebsd.ports.sh freebsd.list > "$@" $(RM_IF_FAIL)
-freebsd.ports.find: freebsd.ports.find.c
-	$(AT_CC)$(CC) -DHASH_TABLE_SIZE=50000 "$<" -o "$@"
+PLATFORM=      freebsd
+OUTPUT_DOC=    $(PLATFORM_DOC)/freebsd.html
+OUTPUT_PKG=    $(PLATFORM_OUT)/217/Makefile
+OUTPUT_PKGDESC=$(PLATFORM_OUT)/217/pkg-descr
+OUTPUT_PKGDIR= $(PLATFORM_OUT)/217
+
+CLEAN_DOC_FILES= $(OUTPUT_DOC)
+CLEAN_EXE_FILES= $(PORTS_FIND_BIN)
+
+include packages.mk
+
+
+PKGDESC_IN=    $(PLATFORM_IN)/freebsd.local.217.pkg-descr
+
+freebsd: $(OUTPUT_DOC) $(OUTPUT_PKG) $(OUTPUT_PKGDESC)
+
+# freebsd.ports.find.c -> freebsd.ports.find
+PORTS_FIND_C=  $(PLATFORM_IN)/freebsd.ports.find.c
+PORTS_FIND_BIN=$(PLATFORM_SH)/freebsd.ports.find
+$(PORTS_FIND_BIN): $(PORTS_FIND_C)
+	$(AT_CC)$(CC) -DHASH_TABLE_SIZE=50000 $(PORTS_FIND_C) -o $(PORTS_FIND_BIN)
+
+# freebsd.list --(freebsd.ports.sh + freebsd.ports.find)-> freebsd.ports
+PORTS_SH=      $(PLATFORM_SH)/freebsd.ports.sh
+PORTS_OUT=     $(PLATFORM_OUT)/freebsd.ports
+$(PORTS_OUT): $(PORTS_SH) $(PKGLIST_OUT) $(PORTS_FIND_BIN)
+	$(AT_GEN)./$(PORTS_SH) $(PKGLIST_OUT) > $(PORTS_OUT) $(RM_IF_FAIL)
+
+# freebsd.makefile.in + freebsd.ports --(freebsd.makefile.sh)-> freebsd.makefile
+MAKEFILE_SH=   $(PLATFORM_SH)/freebsd.makefile.sh
+MAKEFILE_IN=   $(PLATFORM_IN)/freebsd.makefile.in
+MAKEFILE_OUT=  $(PLATFORM_OUT)/freebsd.makefile
+$(MAKEFILE_OUT): $(MAKEFILE_SH) $(MAKEFILE_IN) $(PORTS_OUT)
+	$(AT_GEN)./$(MAKEFILE_SH) $(MAKEFILE_IN) $(PORTS_OUT) > $(MAKEFILE_OUT) $(RM_IF_FAIL)
+
+# freebsd.makefile -> 217/Makefile
+$(OUTPUT_PKG): $(MAKEFILE_OUT)
+	-$(AT_MKDIR)mkdir -p $(OUTPUT_PKGDIR)
+	$(AT_COPY)cp -pf $(MAKEFILE_OUT) $(OUTPUT_PKG)
+
+# freebsd.local.217.pkg-descr -> 217/pkg-descr
+$(OUTPUT_PKGDESC): $(PKGDESC_IN)
+	-$(AT_MKDIR)mkdir -p $(OUTPUT_PKGDIR)
+	$(AT_COPY)cp -pf $(PKGDESC_IN) $(OUTPUT_PKGDESC)
+
 
 # Install meta-ports for FreeBSD
 freebsd-install: freebsd

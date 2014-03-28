@@ -4,13 +4,14 @@ toupper () {
     echo "$1" | tr '[:lower:]' '[:upper:]'
 }
 
-[ -z "${CPP}" ] && CPP="cpp"
 [ -z "$1" ] && echo "Usage: $0 os_type cpp_args" && exit 1
 [ -z "$2" ] && default="yes"
 
 ostype="`toupper "$1"`"
 shift
 
+: ${CPP:="cpp"}
+: ${CPPFLAGS:="-I."}
 if [ "$default" = "yes" ]; then
     selarg="-UWSPKG_NO_DEFAULT "
 else
@@ -21,5 +22,5 @@ else
     done
 fi
 
-${CPP} -D"$ostype" $selarg packages.h | \
+${CPP} ${CPPFLAGS} -D"$ostype" $selarg packages.h | \
     sed -e '/^#/d' -e '/^ *$/d' | tr ' ' '\n' | sed '/^ *$/d'

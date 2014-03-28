@@ -9,12 +9,15 @@ msg () {
 : ${PORTSDIR:="/usr/ports"}
 index="${PORTSDIR}/INDEX-${FREEBSD_VERSION}"
 
+shdir="$(dirname "$0")"
+: ${shdir:="."}
+
 msg "==> FreeBSD version is ${FREEBSD_VERSION}"
 msg "==> FreeBSD ports tree is ${PORTSDIR}"
 msg "==> FreeBSD ports index file is ${index}"
 
 msg "==> Running freebsd.ports.find"
-if ./freebsd.ports.find "$1" "${index}"; then
+if "${shdir}/freebsd.ports.find" "$1" "${index}"; then
 	msg "==> Done!"
 else
 	msg "==> Failed"
