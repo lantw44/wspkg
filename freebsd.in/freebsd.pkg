@@ -334,7 +334,6 @@
 
 // X11
 #define DESKTOP_BASE        NULL
-#define FVWM                fvwm2-i18n
 #define IM_SWITCH           NULL
 #define MLTERM_TOOLS        NULL
 #define RXVT_ML             rxvt-unicode

@@ -344,7 +344,6 @@
 
 // X11
 #define DESKTOP_BASE        desktop-base
-#define FVWM                fvwm
 #define IM_SWITCH           im-switch
 #define MLTERM_TOOLS        mlterm-tools
 #define RXVT_ML             rxvt-ml
