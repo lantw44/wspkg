@@ -20,7 +20,7 @@ PKGLIST_SED= $(PLATFORM_IN)/$(PLATFORM).sed
 PKGLIST_OUT= $(PLATFORM_OUT)/$(PLATFORM).list
 
 # Include silent rules
-include Makefile.silent
+include silent.mk
 
 # Do platform-independent tasks
 all: README.html $(PLATFORM)
