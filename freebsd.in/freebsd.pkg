@@ -134,7 +134,8 @@
 
 // Interpreters
 // KDE
-#define KDE_META_PKG        kde
+#define KDE_META_PKG        kde zh_TW-kde-l10n
+#define KDE_GTK_CONFIG      kde-gtk-config
 
 // Lib
 #define LIBC_DEV            NULL

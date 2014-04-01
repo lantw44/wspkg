@@ -30,7 +30,6 @@
 # define WSPKG_HASKELL
 # define WSPKG_INTERPRETERS
 # define WSPKG_KDE
-# define WSPKG_KDE
 # define WSPKG_LIB
 # define WSPKG_LISP
 # define WSPKG_LUA
@@ -174,7 +173,7 @@ gawk            swig
 #ifdef WSPKG_KDE
 // freebsd local-217
 KDE_META_PKG
-kchmviewer      okular          // added by b01902062@csie.ntu.edu.tw
+KDE_GTK_CONFIG  kchmviewer      okular          // added by b01902062@csie.ntu.edu.tw
 #endif
 
 // Lib

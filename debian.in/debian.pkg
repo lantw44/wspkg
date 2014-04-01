@@ -145,6 +145,7 @@
 // Interpreters
 // KDE
 #define KDE_META_PKG        NULL // FIXME: use tasksel?
+#define KDE_GTK_CONFIG      kde-config-gtk-style
 
 // Lib
 #define LIBC_DEV            libc6-dev libc6-pic libc6-prof libc6-dbg
