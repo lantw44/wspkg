@@ -2,6 +2,7 @@
 
 .POSIX:
 .PHONY: all clean clean-exe clean-doc distclean $(PLATFORM)
+.SUFFIXES:
 .SUFFIXES: .txt .html
 
 V=               0
