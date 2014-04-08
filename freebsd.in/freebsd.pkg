@@ -120,6 +120,8 @@
 #define GTK2                gtk2 gtk2-reference gtkmm24 gtkmm24-reference
 #define GTK3                gtk3 gtk3-reference gtkmm30 gtkmm30-reference
 #define GNOME_SCREENSHOT    gnome-utils
+#define GTK2_THEMES
+#define GTK3_THEMES         gtk3-unico-engine clearlooks-phenix-theme
 
 // Graphics
 #define IMAGEMAGICK         ImageMagick

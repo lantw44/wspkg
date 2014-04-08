@@ -148,7 +148,7 @@ GNOME_META_PKG
 BAOBAB          devhelp         epiphany        eog             gedit
 ghex            GLADE           GTK2            GTK3            gnome-terminal
 GNOME_SCREENSHOT                gnome-system-monitor            nautilus
-vinagre
+vinagre         GTK2_THEMES     GTK3_THEMES
 #endif
 
 // Graphics
