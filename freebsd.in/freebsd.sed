@@ -6,3 +6,5 @@
 /^newmail$/d
 # Need broken package otcl
 /^ns$/d
+# Mark as broken in ports
+/^wmmemload$/d
