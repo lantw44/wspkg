@@ -2,6 +2,7 @@
 .*.swo
 *.out
 *.html
+*.pdf
 *.list
 *.ports
 *.control

@@ -2,7 +2,7 @@
 # Create .deb meta-package for Debian
 
 PLATFORM=      debian
-OUTPUT_DOC=    $(PLATFORM_DOC)/debian.html
+OUTPUT_DOC=    $(PLATFORM_DOC)/debian.html $(PLATFORM_DOC)/debian.pdf
 OUTPUT_PKG=    $(PLATFORM_OUT)/217-meta.deb
 OUTPUT_TMPDIR= $(PLATFORM_OUT)/217-meta
 

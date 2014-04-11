@@ -3,11 +3,12 @@
 .POSIX:
 .PHONY: all clean clean-exe clean-doc distclean $(PLATFORM)
 .SUFFIXES:
-.SUFFIXES: .txt .html
+.SUFFIXES: .txt .html .xml .pdf
 
 V=               0
 CC=              c99
 ASCIIDOC=        asciidoc
+PANDOC=          pandoc
 
 RM_IF_FAIL=      || { rm -f "$@" && false; }
 
@@ -24,11 +25,16 @@ PKGLIST_OUT= $(PLATFORM_OUT)/$(PLATFORM).list
 include silent.mk
 
 # Do platform-independent tasks
-all: README.html $(PLATFORM)
+all: README.html README.pdf $(PLATFORM)
 
 # Generate top-level directory documentation
 .txt.html:
 	-$(AT_DOC)$(ASCIIDOC) -b html -o "$@" "$<"
+.txt.xml:
+	-$(AT_DOC)$(ASCIIDOC) -b docbook -o "$@" "$<"
+.xml.pdf:
+	-$(AT_DOC)$(PANDOC) -f docbook -t latex --latex-engine=xelatex \
+		-V geometry:margin=1in -H chinese.tex -o "$@" "$<"
 
 # Generate package list
 $(PKGLIST_OUT): $(PKGLIST_IN) $(PKGLIST_SED) packages.h packages.sh
@@ -43,6 +49,6 @@ clean:
 clean-exe:
 	rm -f $(CLEAN_EXE_FILES)
 clean-doc:
-	rm -f *.html $(CLEAN_DOC_FILES)
+	rm -f *.html *.xml *.pdf $(CLEAN_DOC_FILES)
 
 distclean: clean clean-exe clean-doc

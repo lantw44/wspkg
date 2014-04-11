@@ -2,7 +2,7 @@
 # Create meta-ports for FreeBSD
 
 PLATFORM=      freebsd
-OUTPUT_DOC=    $(PLATFORM_DOC)/freebsd.html
+OUTPUT_DOC=    $(PLATFORM_DOC)/freebsd.html $(PLATFORM_DOC)/freebsd.pdf
 OUTPUT_PKG=    $(PLATFORM_OUT)/217/Makefile
 OUTPUT_PKGDESC=$(PLATFORM_OUT)/217/pkg-descr
 OUTPUT_PKGDIR= $(PLATFORM_OUT)/217
