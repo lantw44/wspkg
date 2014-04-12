@@ -29,7 +29,8 @@ all: README.html README.pdf $(PLATFORM)
 
 # Generate top-level directory documentation
 .txt.html:
-	-$(AT_DOC)$(ASCIIDOC) -b html -o "$@" "$<"
+	-$(AT_DOC)$(ASCIIDOC) -a toc2 -b html -o - "$<" | \
+		sed 's/,serif/,sans-serif/' > "$@" $(RM_IF_FAIL)
 .txt.xml:
 	-$(AT_DOC)$(ASCIIDOC) -b docbook -o "$@" "$<"
 .xml.pdf:
