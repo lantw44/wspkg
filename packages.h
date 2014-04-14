@@ -141,7 +141,7 @@ TERMINUS        URWFONTS        NONFREE_FONTS   KCFONTS         FIREFLYTTF
 alacarte        evince          file-roller     gcalctool       GDM
 gnome-backgrounds               gnome-keyring   gnome-nettool   gnome-screensaver
 gnome-themes    GNOME_USER_DOCS GTK2_ENGINES    GVFS            REMMINA
-seahorse        xdg-user-dirs   zenity
+seahorse        xdg-user-dirs   zenity          MUTTER
 // freebsd local-217
 GNOME_META_PKG
 // added by b01902062@linux5.csie.ntu.edu.tw
@@ -185,6 +185,7 @@ EXOSIP2_DEV     // voip
 OPENCV_DEV      // opencv suite
 FFMPEG_DEV      // ffmpeg suite
 SDL_DEV
+POPPLER_DEV
 #endif
 
 // Lisp
@@ -213,7 +214,8 @@ VM              // requested by cj
 
 // Math
 #ifdef WSPKG_MATH
-GSL             gnuplot         octave          OCTAVE_DEV      R_BASE
+GSL             gnuplot         octave          OCTAVE_DEV      QHULL
+R_BASE
 #endif
 
 // Misc
@@ -330,7 +332,7 @@ upx
 
 // Video
 #ifdef WSPKG_VIDEO
-MPLAYER         xmms2           gxmms2
+MPLAYER         xmms2           gxmms2          X264
 #endif
 
 // Web

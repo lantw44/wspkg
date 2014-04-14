@@ -122,6 +122,7 @@
 #define REMMINA             remmina remmina-plugin-gnome remmina-plugin-nx \
                             remmina-plugin-rdp remmina-plugin-telepathy \
                             remmina-plugin-vnc remmina-plugin-xdmcp
+#define MUTTER              libmutter-dev
 #define GNOME_META_PKG      NULL // FIXME: use tasksel?
 #define BAOBAB              baobab
 #define GLADE               glade
@@ -161,12 +162,12 @@
 #define QT5_DEV             NULL // TODO: Add Qt 5
 #define PERL_DEV            libperl-dev
 #define MYSQLXX_DEV         libmysql++-dev
-#define OPENMPI_DEV         libopenmpi1.6-dev
+#define OPENMPI_DEV         libopenmpi-dev
 #define GFLAGS_DEV          libgflags-dev
 #define BOOST_DEV           libboost-all-dev
 #define IMLIB2_DEV          libimlib2-dev
 #define EXOSIP2_DEV         libexosip2-dev
-#define OPENCV_DEV          libcv-dev libcvaux-dev libhighgui-dev
+#define OPENCV_DEV          libopencv-dev
 #define FFMPEG_DEV          libavcodec-dev libavformat-dev libpostproc-dev \
                             libavutil-dev libswscale-dev libavfilter-dev
 #define SDL_DEV             libsdl1.2-dev libsdl2-dev \
@@ -185,6 +186,7 @@
 // Math
 #define GSL                 gsl-bin
 #define OCTAVE_DEV          liboctave-dev
+#define QHULL               libqhull-dev
 #define R_BASE              r-base
 
 // Misc
@@ -270,7 +272,7 @@
 
 // Ruby
 #define RUBY                ruby ruby-dev
-#define RUBY_MYSQL          libmysql-ruby
+#define RUBY_MYSQL          ruby-mysql
 
 // Science
 #define BLAST2              blast2
@@ -329,6 +331,7 @@
 
 // Video
 #define MPLAYER             mplayer2 gnome-mplayer
+#define X264                libx264-dev
 
 // Web
 #define FLASH_PLUGIN        flashplugin-nonfree swfdec-mozilla

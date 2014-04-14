@@ -66,8 +66,8 @@
 #define OPENJDK6            openjdk6
 #define OPENJDK7            openjdk
 #define SUBVERSION          subversion svk psvn-emacs24
-#define TCL                 tcl84
-#define TK                  tk84
+#define TCL                 tcl84 tcl85 tcl86
+#define TK                  tk84 tk85 tk86
 #define ECLIPSE             eclipse eclipse-cdt eclipse-langpack eclipse-pydev
 #define JIKES               jikes
 #define BIOJAVA             biojava
@@ -114,6 +114,7 @@
 #define GTK2_ENGINES        gtk-engines2
 #define GVFS                gvfs
 #define REMMINA             remmina remmina-plugins
+#define MUTTER              // XXX: Not available - need GNOME 3 import
 #define GNOME_META_PKG      gnome2-lite // XXX: GNOME 3 may be imported recently
 #define BAOBAB              gnome-utils
 #define GLADE               glade3
@@ -159,6 +160,7 @@
 #define OPENCV_DEV          opencv
 #define FFMPEG_DEV          ffmpeg ffmpeg0
 #define SDL_DEV             sdl sdl2 sdl_mixer sdl2_mixer
+#define POPPLER_DEV         poppler
 
 // Lisp
 // Lua
@@ -173,6 +175,7 @@
 // Math
 #define GSL                 gsl
 #define OCTAVE_DEV          octave
+#define QHULL               qhull5
 #define R_BASE              R
 
 // Misc
@@ -318,6 +321,7 @@
 // Video
 #define MPLAYER             mplayer mplayer-fonts gnome-mplayer \
                             mencoder mplayer2
+#define X264                x264
 
 // Web
 #define FLASH_PLUGIN        swfdec-plugin nspluginwrapper linux_base-f10 \
