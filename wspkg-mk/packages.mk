@@ -10,7 +10,7 @@ WSPKG_MK=        $(WSPKGDIR)/wspkg-mk
 WSPKG_SH=        $(WSPKGDIR)/wspkg-sh
 
 # Include silent rules
-include $(WSPKG_MK)/silent.mk
+include $(WSPKG_MK)/wspkg-mksilent.mk
 
 MKLIST=           $(MKLIST_$(USE_MACRO))
 MKLIST_none=      $(DO_NADA)

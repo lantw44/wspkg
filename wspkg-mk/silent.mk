@@ -1,5 +1,9 @@
 # vim: set ts=8 sts=8 sw=8 ft=make:
 
+AT_M4=$(AT_M4_$(V))
+AT_M4_0=@echo "  M4      "$@;
+AT_M4_1=
+
 AT_CC=$(AT_CC_$(V))
 AT_CC_0=@echo "  CC      "$@;
 AT_CC_1=
@@ -23,6 +27,10 @@ AT_PKG_1=
 AT_COPY=$(AT_COPY_$(V))
 AT_COPY_0=@echo "  COPY    "$@;
 AT_COPY_1=
+
+AT_SCAN=$(AT_SCAN_$(V))
+AT_SCAN_0=@echo "  SCAN    "$@;
+AT_SCAN_1=
 
 AT_INSTALL=$(AT_INSTALL_$(V))
 AT_INSTALL_0=@echo "  INSTALL "$@;
