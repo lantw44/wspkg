@@ -25,5 +25,5 @@ $(DEBIAN_OUT_PKG): $(DEBIAN_OUT_CONTROL)
 debian-install: $(DEBIAN_OUT_PKG)
 	-@mkdir -p $(DEBIAN_OUT_REPO)
 	$(AT_INSTALL)cp -pf $(DEBIAN_OUT_PKG) $(DEBIAN_OUT_REPO)
-	$(AT_SCAN)dpkg-scanpackages $(DEBIAN_OUT_REPO) | \
+	$(AT_SCAN)cd $(DEBIAN_OUT_REPO) && dpkg-scanpackages . | \
 		gzip -9 > $(DEBIAN_OUT_REPO)/Packages.gz
