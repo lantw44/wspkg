@@ -26,6 +26,9 @@ IFS="${lineIFS}"
 
 while read -r control_line 0<&3; do
 	case "${control_line}" in
+		"Version:"*)
+			printf "Version: %s\n" "`date '+%Y.%m.%d'`"
+			;;
 		"Depends:"*)
 			printf "Depends: "
 			IFS="${saveIFS}"
