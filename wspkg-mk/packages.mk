@@ -34,6 +34,7 @@ DEPLIST_m4=       $(DEPLIST_regular)
 
 # Do tasks
 all: $(WSPKG_OUT_LIST) $(BACKEND)
+install: $(BACKEND)-install
 $(WSPKG_OUT_LIST): $(DEPLIST)
 	@mkdir -p $(INDIR) $(OUTDIR)
 	$(MKLIST)
