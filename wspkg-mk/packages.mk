@@ -34,10 +34,22 @@ DEPLIST_m4=       $(DEPLIST_regular)
 
 # Do tasks
 all: $(WSPKG_OUT_LIST) $(BACKEND)
-install: $(BACKEND)-install
 $(WSPKG_OUT_LIST): $(DEPLIST)
 	@mkdir -p $(INDIR) $(OUTDIR)
 	$(MKLIST)
+clean:
+	rm -rf $(OUTDIR)
+show-basic:
+	@echo "-- V: regular variable / I: input / O: output"
+	@echo "V: NAME (project name)                                    = $(NAME)"
+	@echo "V: PKGNAME (package name)                                 = $(PKGNAME)"
+	@echo "I: WSPKG_IN_COMMON (shared package list)                  = $(WSPKG_IN_COMMON)"
+	@echo "I: WSPKG_IN_PLATFORM_PKG (platform-specific package list) = $(WSPKG_IN_PLATFORM_PKG)"
+	@echo "I: WSPKG_IN_PLATFORM_SED (platform-specific package mask) = $(WSPKG_IN_PLATFORM_SED)"
+	@echo "O: WSPKG_OUT_LIST (generated package list)                = $(WSPKG_OUT_LIST)"
+	@echo ""
+show: show-basic $(BACKEND)-show
+install: $(BACKEND)-install
 
 # Include backend-specific makefiles
 include $(BACKENDDIR)/$(BACKEND).mk

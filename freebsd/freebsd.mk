@@ -16,15 +16,20 @@ $(FREEBSD_OUT_PORTS): $(ports_deps)
 		> $(FREEBSD_OUT_PORTS) $(RM_IF_FAIL)
 
 # freebsd.makefile.in + freebsd.ports --(freebsd.makefile.sh)-> freebsd.makefile
-makefile_script = $(BACKENDDIR)/freebsd.makefile.sh
+makefile_script = $(BACKENDDIR)/freebsd.deps.sh
 makefile_deps   = \
 	$(makefile_script)		\
 	$(FREEBSD_IN_MAKEFILE_IN)	\
 	$(FREEBSD_OUT_PORTS)
 
 $(FREEBSD_OUT_MAKEFILE): $(makefile_deps)
-	$(AT_GEN)$(makefile_script) \
-		$(FREEBSD_IN_MAKEFILE_IN) $(FREEBSD_OUT_PORTS) \
+	$(AT_GEN)sed \
+		-e "s|@NAME|$(NAME)|g" \
+		-e "s|@PKGNAME@|$(PKGNAME)|g" \
+		-e "s|@TODAY@|`date '+%Y.%m.%d'`|g" \
+		-e "s|@DEPS@|`$(makefile_script) $(FREEBSD_OUT_PORTS)`|g" \
+		$(FREEBSD_IN_MAKEFILE_IN) | \
+		tr '^' '\\' | tr '%' '\n' \
 		> $(FREEBSD_OUT_MAKEFILE) $(RM_IF_FAIL)
 
 # freebsd.makefile -> 217/Makefile
@@ -45,3 +50,17 @@ freebsd-install: freebsd
 		$(FREEBSD_OUT_PORTS_CATEGORY_MAKEFILE) \
 		$(FREEBSD_OUT_PORTS_CATEGORY_MAKEFILE_INC) \
 		$(FREEBSD_OUT_PKGDIR)
+
+freebsd-show:
+	@echo "-- Ports mapping"
+	@echo "O: FREEBSD_OUT_PORTS (generated ports mapping)            = $(FREEBSD_OUT_PORTS)"
+	@echo ""
+	@echo "-- Meta-ports Makefile"
+	@echo "I: FREEBSD_IN_MAKEFILE_IN (Makefile template)             = $(FREEBSD_IN_MAKEFILE_IN)"
+	@echo "O: FREEBSD_OUT_MAKEFILE (generated Makefile)              = $(FREEBSD_OUT_MAKEFILE)"
+	@echo ""
+	@echo "-- Meta-ports"
+	@echo "I: FREEBSD_IN_PKGDESC (meta-ports description)            = $(FREEBSD_IN_PKGDESC)"
+	@echo "O: FREEBSD_OUT_PKGDIR (meta-ports)                        = $(FREEBSD_OUT_PKGDIR)"
+	@echo "O: FREEBSD_OUT_PKGDESC (copied meta-ports description)    = $(FREEBSD_OUT_PKGDESC)"
+	@echo "O: FREEBSD_OUT_PKG (copied meta-ports Makefile)           = $(FREEBSD_OUT_PKG)"
