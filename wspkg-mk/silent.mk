@@ -20,18 +20,10 @@ AT_GEN=$(AT_GEN_$(V))
 AT_GEN_0=@echo "  GEN     "$@;
 AT_GEN_1=
 
-AT_PKG=$(AT_PKG_$(V))
-AT_PKG_0=@echo "  PKG     "$@;
-AT_PKG_1=
-
 AT_COPY=$(AT_COPY_$(V))
 AT_COPY_0=@echo "  COPY    "$@;
 AT_COPY_1=
 
-AT_SCAN=$(AT_SCAN_$(V))
-AT_SCAN_0=@echo "  SCAN    "$@;
-AT_SCAN_1=
-
-AT_INSTALL=$(AT_INSTALL_$(V))
-AT_INSTALL_0=@echo "  INSTALL "$@;
-AT_INSTALL_1=
+AT_MKDIR=$(AT_MKDIR_$(V))
+AT_MKDIR_0=@echo "  MKDIR   "$@;
+AT_MKDIR_1=

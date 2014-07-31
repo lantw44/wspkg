@@ -16,14 +16,14 @@ $(DEBIAN_OUT_CONTROL): $(control_deps)
 
 # debian.control -> 217-meta.deb
 $(DEBIAN_OUT_PKG): $(DEBIAN_OUT_CONTROL)
-	-@mkdir -p $(DEBIAN_OUT_PKGDIR)/DEBIAN
+	$(AT_MKDIR)mkdir -p $(DEBIAN_OUT_PKGDIR)/DEBIAN
 	$(AT_COPY)cp -pf $(DEBIAN_OUT_CONTROL) \
 		$(DEBIAN_OUT_PKGDIR)/DEBIAN/control
-	$(AT_PKG)dpkg-deb --build \
+	$(AT_GEN)dpkg-deb --build \
 		$(DEBIAN_OUT_PKGDIR) $(DEBIAN_OUT_PKG)
 
 debian-install: $(DEBIAN_OUT_PKG)
-	-@mkdir -p $(DEBIAN_OUT_REPO)
-	$(AT_INSTALL)cp -pf $(DEBIAN_OUT_PKG) $(DEBIAN_OUT_REPO)
-	$(AT_SCAN)cd $(DEBIAN_OUT_REPO) && dpkg-scanpackages . | \
-		gzip -9 > $(DEBIAN_OUT_REPO)/Packages.gz
+	$(AT_MKDIR)mkdir -p $(DEBIAN_OUT_REPO)
+	$(AT_COPY)cp -pf $(DEBIAN_OUT_PKG) $(DEBIAN_OUT_REPO)
+	$(AT_GEN)cd $(DEBIAN_OUT_REPO) && dpkg-scanpackages . > Packages
+	$(AT_GEN)gzip -9f $(DEBIAN_OUT_REPO)/Packages
