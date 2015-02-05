@@ -27,3 +27,7 @@ AT_COPY_1=
 AT_MKDIR=$(AT_MKDIR_$(V))
 AT_MKDIR_0=@echo "  MKDIR   "$@;
 AT_MKDIR_1=
+
+AT_SIGN=$(AT_SIGN_$(V))
+AT_SIGN_0=@echo "  SIGN    "$@;
+AT_SIGN_1=

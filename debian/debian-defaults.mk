@@ -9,3 +9,6 @@ DEBIAN_OUT_PKG=         $(OUTDIR)/$(PKGNAME).deb
 
 # Repository
 DEBIAN_OUT_REPO=        $(OUTDIR)/repo
+
+# Signature
+DEBIAN_SIGN=            no
