@@ -16,9 +16,13 @@ $(FREEBSD_OUT_PORTS): $(ports_deps)
 		> $(FREEBSD_OUT_PORTS) $(RM_IF_FAIL)
 
 # freebsd.makefile.in + freebsd.ports --(freebsd.makefile.sh)-> freebsd.makefile
-makefile_script = $(BACKENDDIR)/freebsd.deps.sh
+makefile_deps_script        = $(BACKENDDIR)/freebsd.deps.sh
+makefile_nopkg_setup_script = $(BACKENDDIR)/freebsd.nopkg-setup.sh
+makefile_nopkg_deps_script  = $(BACKENDDIR)/freebsd.nopkg-deps.sh
 makefile_deps   = \
-	$(makefile_script)		\
+	$(makefile_deps_script)		\
+	$(makefile_nopkg_setup_script)	\
+	$(makefile_nopkg_deps_script)	\
 	$(FREEBSD_IN_MAKEFILE_IN)	\
 	$(FREEBSD_OUT_PORTS)
 
@@ -27,7 +31,9 @@ $(FREEBSD_OUT_MAKEFILE): $(makefile_deps)
 		-e "s|@NAME|$(NAME)|g" \
 		-e "s|@PKGNAME@|$(PKGNAME)|g" \
 		-e "s|@TODAY@|`date '+%Y.%m.%d'`|g" \
-		-e "s|@DEPS@|`$(makefile_script) $(FREEBSD_OUT_PORTS)`|g" \
+		-e "s|@DEPS@|`$(makefile_deps_script) $(FREEBSD_OUT_PORTS)`|g" \
+		-e "s|@NOPKG_SETUP@|`$(makefile_nopkg_setup_script) $(FREEBSD_OUT_PORTS)`|g" \
+		-e "s|@NOPKG_DEPS@|`$(makefile_nopkg_deps_script) $(FREEBSD_OUT_PORTS)`|g" \
 		$(FREEBSD_IN_MAKEFILE_IN) | \
 		tr '^' '\\' | tr '%' '\n' \
 		> $(FREEBSD_OUT_MAKEFILE) $(RM_IF_FAIL)
