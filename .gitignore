@@ -7,4 +7,4 @@
 *.ports
 *.control
 *.makefile
-/freebsd.sh/freebsd.ports.find
+/freebsd/freebsd.ports.find
