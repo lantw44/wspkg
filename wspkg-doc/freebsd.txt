@@ -3,24 +3,24 @@ wspkg - FreeBSD 支援：ports 與 pkgng
 217 工作站實驗室 <217ta@csie.ntu.edu.tw>
 
 -------------------------------------------------------------------------------
-  +----------------------+
-  | FreeBSD package list |
-  |    freebsd.list      |
-  +----------------------+
-            | freebsd.ports.sh
-            | freebsd.ports.find
+  +------------------------+
+  |  FreeBSD package list  |
+  | <list>/out/<list>.list |
+  +------------------------+
+            | freebsd/freebsd.ports.sh
+            | freebsd/freebsd.ports.find
             v
-  +---------------------+
-  | FreeBSD ports list  |
-  |    freebsd.ports    |-+
-  +---------------------+ |  freebsd.makefile.sh    +------------------------+
-                          +--------------------->>>>| FreeBSD ports Makefile |
-                          |                         |    freebsd.makefile    |
-+-------------------------+-------+                 +------------------------+
-| FreeBSD ports Makefile template |
-|       freebsd.makefile.in       |
-+---------------------------------+
-
+  +-------------------------+
+  |   FreeBSD ports list    |
+  | <list>/out/<list>.ports +--+ freebsd/freebsd.mk
+  +-------------------------+  | freebsd/freebsd.deps.sh
+                          +------------------------------+
+                          |                              |
++-------------------------+------+                       v
+| FreeBSD port Makefile template |             +----------------------------+
+|   <list>/<list>.makefile.in    |             |   FreeBSD port Makefile    |
++--------------------------------+             | <list>/out/<list>.makefile |
+                                               +----------------------------+
 -------------------------------------------------------------------------------
 
 產生 ports 目錄清單
@@ -29,6 +29,6 @@ wspkg - FreeBSD 支援：ports 與 pkgng
 所在的目錄。freebsd.ports.sh 會幫忙找到系統的 ports tree 及 index file，再執行
 freebsd.ports.find 從 index file 產生清單。
 
-產生 meta-ports Makefile
-------------------------
+產生 meta-port Makefile
+-----------------------
 freebsd.makefile.sh 會根據 template 填上版本號以及 RUN_DEPENDS 以產生 Makefile。
