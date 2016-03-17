@@ -15,7 +15,7 @@ $(FREEBSD_OUT_PORTS): $(ports_deps)
 	$(AT_GEN)$(ports_script) $(WSPKG_OUT_LIST) \
 		> $(FREEBSD_OUT_PORTS) $(RM_IF_FAIL)
 
-# freebsd.makefile.in + freebsd.ports --(freebsd.makefile.sh)-> freebsd.makefile
+# freebsd.makefile.in + freebsd.ports -> freebsd.makefile
 makefile_deps_script        = $(BACKENDDIR)/freebsd.deps.sh
 makefile_nopkg_setup_script = $(BACKENDDIR)/freebsd.nopkg-setup.sh
 makefile_nopkg_deps_script  = $(BACKENDDIR)/freebsd.nopkg-deps.sh

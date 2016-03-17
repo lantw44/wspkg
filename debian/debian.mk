@@ -7,7 +7,7 @@ DEBIAN_INSTALL_no=   debian-install-repo
 
 debian: $(DEBIAN_OUT_PKG)
 
-# debian.control.in + debian.list --(debian.control.sh)-> debian.control
+# debian.control.in + debian.list -> debian.control
 control_script = $(BACKENDDIR)/debian.deps.sh
 control_deps   = \
 	$(control_script)	\
