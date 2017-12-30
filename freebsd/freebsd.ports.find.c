@@ -31,6 +31,9 @@ static void write_maps (const char* list_file) {
 	for (n = 0; getline (&line, &len, fp) >= 0; n++) {
 		strtok (line, "\n");
 
+		const char *pkgname = strtok (line, "@");
+		const char *flavor = strtok (NULL, "@");
+
 		ENTRY hfind = {
 			.key = line,
 			.data = NULL
@@ -41,7 +44,8 @@ static void write_maps (const char* list_file) {
 			exit (4);
 		}
 
-		printf ("%-32s %s\n", line, hresult->data);
+		printf ("%-32s %-40s %s\n", pkgname, hresult->data,
+			flavor != NULL ? flavor : "@");
 	}
 
 	free (line);
