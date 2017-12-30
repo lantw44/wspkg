@@ -13,6 +13,9 @@
 #define msg(...)     fprintf(stderr, __VA_ARGS__)
 #define msgstr(x)    fputs((x), stderr)
 
+static char *index_lines[HASH_TABLE_SIZE];
+static size_t index_count = 0;
+
 static void write_maps (const char* list_file) {
 	FILE* fp = fopen (list_file, "r");
 	if (fp == NULL) {
@@ -39,9 +42,9 @@ static void write_maps (const char* list_file) {
 		}
 
 		printf ("%-32s %s\n", line, hresult->data);
-		line = NULL;
-		len = 0;
 	}
+
+	free (line);
 
 	if (!feof (fp)) {
 		msgstr ("Fail to read the whole list file\n");
@@ -101,14 +104,17 @@ static void read_entries (const char* index_file) {
 			.key = pkgname,
 			.data = fullpath
 		};
-		if (hsearch (hentry, ENTER) == NULL) {
+		if (hsearch (hentry, ENTER) == NULL || index_count >= HASH_TABLE_SIZE) {
 			msgstr ("The hash table is full!\n");
 			exit (5);
 		}
 
+		index_lines[index_count++] = line;
 		line = NULL;
 		len = 0;
 	}
+
+	free (line);
 
 	if (!feof (fp)) {
 		msgstr ("Fail to read the whole index file\n");
@@ -134,6 +140,12 @@ int main (int argc, char* argv[]) {
 
 	read_entries (argv[2]);
 	write_maps (argv[1]);
+
+	for (size_t i = 0; i < index_count; i++) {
+		free (index_lines[i]);
+	}
+
+	hdestroy ();
 
 	return 0;
 }
