@@ -27,14 +27,14 @@ makefile_deps   = \
 	$(FREEBSD_OUT_PORTS)
 
 $(FREEBSD_OUT_MAKEFILE): $(makefile_deps)
-	$(AT_GEN)sed \
-		-e "s|@NAME|$(NAME)|g" \
-		-e "s|@PKGNAME@|$(PKGNAME)|g" \
-		-e "s|@TODAY@|`date '+%Y.%m.%d'`|g" \
-		-e "s|@DEPS@|`$(makefile_deps_script) $(FREEBSD_OUT_PORTS)`|g" \
-		-e "s|@NOPKG_SETUP@|`$(makefile_nopkg_setup_script) $(FREEBSD_OUT_PORTS)`|g" \
-		-e "s|@NOPKG_DEPS@|`$(makefile_nopkg_deps_script) $(FREEBSD_OUT_PORTS)`|g" \
-		$(FREEBSD_IN_MAKEFILE_IN) | \
+	$(AT_GEN)( \
+		echo "s|@NAME|$(NAME)|g"; \
+		echo "s|@PKGNAME@|$(PKGNAME)|g"; \
+		echo "s|@TODAY@|`date '+%Y.%m.%d'`|g"; \
+		echo "s|@DEPS@|`$(makefile_deps_script) $(FREEBSD_OUT_PORTS)`|g"; \
+		echo "s|@NOPKG_SETUP@|`$(makefile_nopkg_setup_script) $(FREEBSD_OUT_PORTS)`|g"; \
+		echo "s|@NOPKG_DEPS@|`$(makefile_nopkg_deps_script) $(FREEBSD_OUT_PORTS)`|g"; \
+		) | sed -f /dev/stdin $(FREEBSD_IN_MAKEFILE_IN) | \
 		tr '^' '\\' | tr '%' '\n' \
 		> $(FREEBSD_OUT_MAKEFILE) $(RM_IF_FAIL)
 
