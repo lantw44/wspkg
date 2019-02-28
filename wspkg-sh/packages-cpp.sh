@@ -15,14 +15,14 @@ shift
 while [ "$1" ]; do
     case "$1" in
         -*)
-            selarg="$selarg -D$(toupper "$1")"
+            selarg="${selarg} -D$(toupper "$1")"
             ;;
         *)
-            selarg="$selarg -DWSPKG_$(toupper "$1")"
+            selarg="${selarg} -DWSPKG_$(toupper "$1")"
             ;;
     esac
     shift
 done
 
-eval "${CPP} ${CPPFLAGS} $selarg "'"$input_file"' | \
+eval "${CPP} ${CPPFLAGS} ${selarg} "'"${input_file}"' | \
     sed -e '/^#/d' -e '/^ *$/d' | tr ' ' '\n' | sed '/^ *$/d'
