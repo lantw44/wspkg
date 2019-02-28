@@ -1,7 +1,11 @@
 #!/bin/sh
 
 msg () {
-	echo "$@" 1>&2
+	printf '%s\n' "$1" 1>&2
+}
+
+quote () {
+	printf \''%s'\' "$(printf '%s' "$1" | sed s,\',\'\"\'\"\',g)"
 }
 
 list_file="$1"
@@ -27,7 +31,7 @@ pkg_groups_add () {
 
 # pkg_groups_find <group>
 pkg_groups_find () {
-	echo "${pkg_groups_map}" | grep "/$1/" | cut -f 1 -d ' '
+	printf '%s\n' "${pkg_groups_map}" | grep "/$1/" | cut -f 1 -d ' '
 }
 
 # Build the list of groups
@@ -99,9 +103,9 @@ for pkg_or_group in `cat "${list_file}"`; do
 	fi
 	for pkg in ${pkgs}; do
 		if [ "${loop_first}" = "1" ]; then
-			printf "'%s'" "${pkg}"
+			printf '%s' "$(quote "${pkg}")"
 		else
-			printf " '%s'" "${pkg}"
+			printf ' %s' "$(quote "${pkg}")"
 		fi
 		loop_first=0
 	done

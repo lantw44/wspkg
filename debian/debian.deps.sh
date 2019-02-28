@@ -6,9 +6,9 @@ list_file="$1"
 loop_first=1
 for pkg in `cat "${list_file}"`; do
 	if [ "${loop_first}" = "1" ]; then
-		printf "%s" "${pkg}"
+		printf '%s' "${pkg}"
 	else
-		printf ", %s" "${pkg}"
+		printf ', %s' "${pkg}"
 	fi
 	loop_first=0
 done

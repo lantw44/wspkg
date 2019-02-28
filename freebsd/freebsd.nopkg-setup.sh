@@ -11,8 +11,8 @@ tr '/' '_' < "${ports_file}" | paste "${ports_file}" - | (
 			pkg_ports_var="${pkg_ports_var}_${pkg_flavor}"
 			pkg_ports="${pkg_ports} FLAVOR=${pkg_flavor}"
 		fi
-		printf 'WSPKG_PACKAGE_NAME_%-40s != printf "\\\\r===> Generating package names (%5d/%5d)" 1>\\&2; $(MAKE) -C ${PORTSDIR}/%-48s -V PKGNAMEPREFIX -V PORTNAME -V PKGNAMESUFFIX \\| tr -d "\\\\n"%%' \
+		printf 'WSPKG_PACKAGE_NAME_%-40s != printf '\''\\\\r===> Generating package names (%5d/%5d)'\'' 1>\\&2; $(MAKE) -C ${PORTSDIR}/%-48s -V PKGNAMEPREFIX -V PORTNAME -V PKGNAMESUFFIX \\| tr -d '\''\\\\n'\''%%' \
 			"${pkg_ports_var}" "${index}" "${count}" "${pkg_ports}"
 		index=$(( ${index} + 1 ))
 	done )
-printf 'WSPKG_PACKAGE_NAME_%-25s != echo 1>\\&2; echo %%' "NULL"
+printf 'WSPKG_PACKAGE_NAME_%-40s != echo 1>\\&2; echo %%' "NULL"

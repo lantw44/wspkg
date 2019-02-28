@@ -1,22 +1,22 @@
 #!/bin/sh
 
 msg_and_copy () {
-    echo "==> Copying $1 to $2" 1>&2
+    printf '==> Copying %s to %s\n' "$1" "$2" 1>&2
     cp -r "$1" "$2"
 }
 
 msg_and_mkdir () {
-    echo "==> Creating directory $1" 1>&2
+    printf '==> Creating directory %s\n' "$1" 1>&2
     mkdir -p "$1"
 }
 
 if [ -z "$4" ]; then
-    echo "Usage: $0 category cat_makefile cat_makefile_inc dir"
-    echo "Example: "'`'"$0 local local.makefile local.makefile.inc 217' will do"
-    echo " mkdir -p                 /usr/ports/local"
-    echo " cp -r local.makefile     /usr/ports/local/Makefile"
-    echo " cp -r local.makefile.inc /usr/ports/local/Makefile.inc"
-    echo " cp -r 217                /usr/ports/local"
+    printf 'Usage: %s category cat_makefile cat_makefile_inc dir\n' "$0"
+    printf 'Example: %s local local.makefile local.makefile.inc 217 will do\n' "$0"
+    echo   ' mkdir -p                 /usr/ports/local'
+    echo   ' cp -r local.makefile     /usr/ports/local/Makefile'
+    echo   ' cp -r local.makefile.inc /usr/ports/local/Makefile.inc'
+    echo   ' cp -r 217                /usr/ports/local'
     exit 1
 fi
 

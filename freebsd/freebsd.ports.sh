@@ -1,7 +1,7 @@
 #!/bin/sh
 
 msg () {
-	echo "$@" 1>&2
+	printf '%s\n' "$1" 1>&2
 }
 
 [ -z "$1" ] && msg "Usage: $0 list_file" && exit 1

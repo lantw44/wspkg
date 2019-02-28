@@ -1,10 +1,10 @@
 #!/bin/sh
 
 toupper () {
-    echo "$1" | sed 's/^-//' | tr '[:lower:]' '[:upper:]'
+    printf '%s\n' "$1" | sed 's/^-//' | tr '[:lower:]' '[:upper:]'
 }
 
-[ -z "$1" ] && echo "Usage: $0 input_file cpp_args" && exit 1
+[ -z "$1" ] && printf 'Usage: %s input_file cpp_args\n' "$0" && exit 1
 [ -z "$2" ] && default="yes"
 
 input_file="$1"
