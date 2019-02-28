@@ -9,9 +9,9 @@ quote () {
 }
 
 list_file="$1"
-: ${list_file:="arch.list"}
-: ${TAR:="tar"}
-: ${ARCH_DBPATH:="/var/lib/pacman"}
+: "${list_file:="arch.list"}"
+: "${TAR:="tar"}"
+: "${ARCH_DBPATH:="/var/lib/pacman"}"
 dbpath_sync="${ARCH_DBPATH}/sync"
 
 newline='
@@ -37,15 +37,15 @@ pkg_groups_find () {
 # Build the list of groups
 for db in "${dbpath_sync}"/*.db; do
 	msg "==> Loading package database ${db}"
-	tmpdir="`mktemp -d`"
-	if [ -z "${tmpdir}" ] || [ "`dirname "${tmpdir}"`" = "/" ]; then
+	tmpdir="$(mktemp -d)"
+	if [ -z "${tmpdir}" ] || [ "$(dirname "${tmpdir}")" = "/" ]; then
 		msg "==> Invalid temporary directory ${tmpdir}"
 		exit 1
 	fi
-	${TAR} -xf "${db}" -C "${tmpdir}"
+	"${TAR}" -xf "${db}" -C "${tmpdir}"
 	for desc in "${tmpdir}"/*/desc; do
 		have_groups=0
-		case "`cat "${desc}"`" in
+		case "$(cat "${desc}")" in
 			*%GROUPS%*)
 				have_groups=1
 				;;
@@ -91,13 +91,13 @@ for db in "${dbpath_sync}"/*.db; do
 			fi
 		done < "${desc}"
 	done
-	rm -rf "${tmpdir}"
+	rm -r -- "${tmpdir}"
 done
 
 loop_first=1
 msg "==> Expanding all groups"
-for pkg_or_group in `cat "${list_file}"`; do
-	pkgs="`pkg_groups_find "${pkg_or_group}"`"
+while read -r pkg_or_group; do
+	pkgs="$(pkg_groups_find "${pkg_or_group}")"
 	if [ -z "${pkgs}" ]; then
 		pkgs="${pkg_or_group}"
 	fi
@@ -109,4 +109,4 @@ for pkg_or_group in `cat "${list_file}"`; do
 		fi
 		loop_first=0
 	done
-done
+done < "${list_file}"

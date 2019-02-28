@@ -1,7 +1,7 @@
 #!/bin/sh
 
 ports_file="$1"
-: ${ports_file:="freebsd.ports"}
+: "${ports_file:="freebsd.ports"}"
 
 exec 4< "${ports_file}"
 
